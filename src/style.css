@@ -30,25 +30,55 @@ body {
   font-weight: 700;
 }
 
-.containerSubTi {
+.containerSubTi, .containerSubTiDoc {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 20px;
 }
 
+@media screen and (max-width: 6000px) {
+  .containerSubTiDoc {
+    margin-bottom: 20px;
+  }
+}
+
 /*  */
 /* home */
 /*  */
 .home,
-.AboutUs,
-.featured,
-.grid-demo {
+.AboutUs {
   background-size: cover;
   background-position: center;
   width: 100vw;
   height: 100vh;
 }
+
+.grid-demo{
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 150vh;
+}
+
+.grid-demo .ImgBanda img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 159vh;
+  width: auto;
+  z-index: -1;
+}
+
+@media screen and (max-width: 550px) {
+  .grid-demo .ImgBanda img{
+    height: 159vh;
+    width: auto;
+    left: -8vw;
+  }
+}
+
 
 .home {
   display: flex;
@@ -59,7 +89,7 @@ body {
 .logotipo img {
   position: absolute;
   top: 2.5vw;
-  width: 400px;
+  width: 360px;
   height: auto;
 }
 
@@ -124,47 +154,177 @@ body {
 /* About Us */
 /*  */
 
+.AboutUs {
+  display: flex;
+  align-items: center;
+}
+
+.AboutUsIMG,
+.AboutUstxt {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  height: auto;
+}
+
+.AboutUsIMG img {
+  width: 600px;
+  height: auto;
+}
+
+.AboutUstxt {
+  flex-direction: column;
+  align-items: center;
+}
+
+.AboutUstxt p {
+  text-align: justify;
+  padding: 3vw;
+  font-size: 16px;
+}
+
+
+
+
+
+.contadorlibros p:first-child {
+  font-size: 50px;
+}
+
+.contadorlibros p {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #691B31;
+}
+
+.contadorlibros img {
+  width: 350px;
+}
+
+.contadorlibros {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+
+@media screen and (max-width: 550px) {
+  .subtitulo {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .AboutUs {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .AboutUsIMG img {
+    width: 250px;
+  }
+
+  .AboutUstxt p {
+    width: 80vw;
+    font-size: 12px;
+  }
+
+  .contadorlibros img {
+    width: 200px;
+  }
+}
+
 /*  */
 /* featured */
 /*  */
 
-.featured .container {
+
+.featured {
+  background-size: cover;
+  background-position: center;
   width: 100vw;
-  height: auto;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured .containerFeatured {
   display: flex;
   justify-content: center;
 }
 
-.featured .item {
+.featured .item img {
   width: 120px;
-  height: 200px;
-  background-color: #ff78aa;
+  height: auto;
   margin: 10px;
+  border-radius: 6%;
+  transition: 1.5s;
 }
 
-.featured .item:hover {
-  transform: scale(1.3);
-  background-color: #ffd078;
+.featured .item img:hover {
+  transform: scale(1.5);
+  margin: 0 50px 0px 50px;
 }
 
 .featuredh2 {
   text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+  .featured {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .featured .containerFeatured {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featured .item img:hover {
+    margin: 50px 50px 50px 50px;
+  }
+
+  .featured .item img {
+    width: 80px;
+    height: auto;
+    margin: 10px;
+  }
 
 }
 
-/* .featured .item img{
-  width: 60%;
-  height: auto;
-  cursor: pointer;
-} */
 
+
+/*  */
+/* Foouter */
+/*  */
+
+.foouter {
+  background-size: cover;
+  background-position: top;
+  width: 100vw;
+  height: 25vh;
+  border-radius: 50px 50px 0px 0px;
+}
+
+@media screen and (max-width: 550px) {
+  .foouter {
+    height: 12vh;
+    border-radius: 25px 25px 0px 0px;
+  }
+}
 /*  */
 /* Controls */
 /*  */
 
 .controls {
   position: relative;
-  top: calc(50vh - 20.5vw - 62px);
+  top: 5vh;
   width: 60vw;
   margin-left: 20vw;
   font-size: 19px;
@@ -179,7 +339,7 @@ body {
 
 @media (max-width: 600px) {
   .controls {
-    top: calc(50vh - 17.5vw - 160px);
+    top: 2vh;
   }
 
   .control {
@@ -202,7 +362,6 @@ body {
   text-align: center;
   z-index: 2;
   pointer-events: none;
-
 }
 
 .control-field {
@@ -891,13 +1050,20 @@ a {
 .container {
   user-select: none;
   width: 100vw;
-  height: 35vw;
+  height: 120vh;
   max-width: 1536px;
-  max-height: 530px;
+  max-height: 1000px;
   margin: 0 auto;
   display: block;
   position: relative;
-  top: calc(50vh - 17.5vw);
+  top: 75px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    top: 10px;
+  }
+
 }
 
 .main {
@@ -911,9 +1077,9 @@ a {
 /*Switch Screen*/
 .screenframe {
   position: absolute;
-  left: 5.5%;
+  left: 7%;
   top: 0;
-  right: 10%;
+  right: 7%;
   bottom: 0;
 }
 

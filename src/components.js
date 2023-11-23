@@ -1,15 +1,20 @@
-import React from "react";
 // import { resolveSrcName } from "./utils";
+import React, { useState, useEffect } from "react";
 
 // Demo component.
 export const Demo = ({ children }) => (
-  <section className="grid-demo">{children}</section>
+  <section className="grid-demo">
+    <div className="ImgBanda" >
+      <img src="../img/banda.png" alt="Descripción de la imagen" />
+    </div>
+    {children}
+  </section>
 );
 
 // Header component.
 export const Header = ({ children }) => (
   <div className="controls">
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className="containerSubTiDoc">
       <img src="../img/titulop.png" alt="Descripción de la primera imagen" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
       <h2 className="subtitulo">DOCUMENTOS</h2>
       <img src="../img/titulop.png" alt="Descripción de la segunda imagen" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
@@ -40,34 +45,54 @@ export const BackgroundHome = ({ children }) => (
 );
 
 // Select component.
-export const AboutUs = ({ children }) => (
-  <section className="AboutUs">
-    <div className="">
-      {/* <img src="../img/Logotipo.png" alt="Logo de la empresa" /> */}
-      <h2 className="homeh2">Prepárate para el futuro.</h2>
-    </div>
-    <div className="AboutUstxt">
-      <p className="homeh3">Te damos la bienvenida a la Biblioteca Digital de la SPPC, una iniciativa de la Secretaría de Planeación y Participación Ciudadana enmarcada en el contexto de la Alianza para el Gobierno Abierto (Open Government Partnership), de la cual forma parte el Gobierno de Jalisco. Los esfuerzos de dicha alianza propician compromisos concretos de los gobiernos para promover la transparencia, incrementar la participación ciudadana en los asuntos públicos, combatir la corrupción y aprovechar las nuevas tecnologías para robustecer la gobernanza. Por ello, el Gobierno de Jalisco pone a disposición de la ciudadanía jalisciense, mediante la aplicación de nuevas tecnologías de la información y la comunicación, este amplio repositorio de registros relevantes para el seguimiento de la práctica pública.</p>
-    </div>
-    {children}
-  </section>
-);
+export const AboutUs = ({ children }) => {
+  const [count, setCount] = useState(0);
+  const [duration, setDuration] = useState(4000);
 
-// // Select component.
-// export const Featured = ({ children }) => (
-//   <section className="featured"
-//     style={{
-//       backgroundImage: `url(../img/back.png)`,
-//     }}
-//   >
+  useEffect(() => {
+    const targetCount = 600;
+    const interval = duration / targetCount;
 
+    const counterInterval = setInterval(() => {
+      setCount((prevCount) => {
+        if (prevCount < 300) {
+          // Primeros 300 números, contar rápidamente
+          return prevCount + 10;
+        } else if (prevCount < targetCount) {
+          // Últimos 300 números, contar lentamente
+          return prevCount + 1;
+        } else {
+          clearInterval(counterInterval);
+          // Cuando esté a punto de llegar a targetCount, reduce la duración a 10 segundos
+          setDuration(10000);
+          return targetCount;
+        }
+      });
+    }, interval);
 
+    // Limpieza del intervalo al desmontar el componente
+    return () => clearInterval(counterInterval);
+  }, [duration]); // Agrega duration al array de dependencias
 
-//     {children}
-//   </section>
-// );
+  return (
+    <section className="AboutUs">
+      <div className="AboutUsIMG">
+        <img src="../img/libro.png" alt="Logo de la empresa" />
+      </div>
+      <div className="AboutUstxt">
+        <p className="homeh3">Te damos la bienvenida a la Biblioteca Digital de la SPPC, una iniciativa de la Secretaría de Planeación y Participación Ciudadana enmarcada en el contexto de la Alianza para el Gobierno Abierto (Open Government Partnership), de la cual forma parte el Gobierno de Jalisco. Los esfuerzos de dicha alianza propician compromisos concretos de los gobiernos para promover la transparencia, incrementar la participación ciudadana en los asuntos públicos, combatir la corrupción y aprovechar las nuevas tecnologías para robustecer la gobernanza. Por ello, el Gobierno de Jalisco pone a disposición de la ciudadanía jalisciense, mediante la aplicación de nuevas tecnologías de la información y la comunicación, este amplio repositorio de registros relevantes para el seguimiento de la práctica pública.</p>
+        <div className="contadorlibros">
+          <p>{count}</p>
+          <p>Total de publicaciones</p>
+          <img src="../img/librosTotal.png" alt="Logo de la empresa" />
+        </div>
+      </div>
+      {children}
+    </section>
+  );
+};
 
-
+// Select component.
 export const Featured = ({ children }) => (
   <section className="featured"
     style={{
@@ -79,37 +104,48 @@ export const Featured = ({ children }) => (
       <img src="../img/titulop.png" alt="Descripción de la primera imagen" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
       <h2 className="subtitulo"> COLECCIONES DESTACADAS</h2>
       <img src="../img/titulop.png" alt="Descripción de la segunda imagen" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
-
     </div>
-
-
-
     {/* Contenedor de 4 elementos */}
-    <div className="container">
+    <div className="containerFeatured">
       {/* Contenedor 1 */}
       <div className="item">
-        {/* <img src="../img/primer.png" alt="Item 1"/> */}
+        <img src="../img/primer.png" alt="Item 1" />
       </div>
 
       {/* Contenedor 2 */}
       <div className="item">
-        {/* <img src="../img/primer.png" alt="Item 2"/> */}
+        <img src="../img/primer.png" alt="Item 2" />
       </div>
 
       {/* Contenedor 3 */}
       <div className="item">
-        {/* <img src="../img/primer.png" alt="Item 3"/> */}
+        <img src="../img/primer.png" alt="Item 3" />
       </div>
 
       {/* Contenedor 4 */}
       <div className="item">
-        {/* <img src="../img/primer.png" alt="Item 4"/> */}
+        <img src="../img/primer.png" alt="Item 4" />
       </div>
     </div>
 
     {children}
   </section>
 );
+
+// Select component.
+export const Foouter = ({ children }) => (
+  <section className="foouter"
+    style={{
+      backgroundImage: `url(../img/foouter.png)`,
+    }}
+  >
+
+
+
+    {children}
+  </section>
+);
+
 
 
 // Select component.

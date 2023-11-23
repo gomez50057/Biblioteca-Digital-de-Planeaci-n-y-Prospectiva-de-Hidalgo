@@ -1,15 +1,18 @@
 /* React */
 import React, { useState, useMemo, useRef } from "react";
-import ReactDom from "react-dom";
+import { createRoot } from 'react-dom/client';
+
+
 /* Muuri-react */
 import { MuuriComponent, AutoScroller, useData } from "muuri-react";
 /* Utils & components */
-import { Demo, Header, BackgroundHome, AboutUs, Featured, Select, Input, Switch, CardContent} from "./components";
+import { Demo, Header, BackgroundHome, AboutUs, Featured, Select, Input, Switch, CardContent, Foouter } from "./components";
 import { Pokedex, useFilter } from "./utils";
 /* Style */
 import "./style.css";
 
-
+const rootElement = document.getElementById('app');
+const root = createRoot(rootElement);
 
 // App.
 const App = () => {
@@ -61,6 +64,7 @@ const App = () => {
 
 
 
+
       <Demo>
         {/* Header */}
         <Header>
@@ -100,7 +104,8 @@ const App = () => {
           </MuuriComponent>
         </Switch>
       </Demo>
-      
+      <Foouter>
+      </Foouter>
     </div>
 
   );
@@ -116,5 +121,6 @@ const PokeCard = props => {
   return <CardContent {...props} />;
 };
 
-ReactDom.render(<App />, document.getElementById("root"));
+root.render(<App />);
+
 
