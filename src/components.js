@@ -48,31 +48,58 @@ export const BackgroundHome = ({ children }) => (
 export const AboutUs = ({ children }) => {
   const [count, setCount] = useState(0);
   const [duration, setDuration] = useState(4000);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const targetCount = 600;
-    const interval = duration / targetCount;
+    const handleScroll = () => {
+      const element = document.querySelector('.AboutUs');
+      if (element) {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
 
-    const counterInterval = setInterval(() => {
-      setCount((prevCount) => {
-        if (prevCount < 300) {
-          // Primeros 300 números, contar rápidamente
-          return prevCount + 10;
-        } else if (prevCount < targetCount) {
-          // Últimos 300 números, contar lentamente
-          return prevCount + 1;
+        // Ajusta estos valores según sea necesario para activar el conteo en el momento deseado
+        const triggerTop = window.innerHeight * 0.5; // Activar cuando el 50% del componente sea visible
+        const triggerBottom = window.innerHeight * 0.3; // Desactivar cuando el 70% del componente esté fuera de vista
+
+        if (elementTop < triggerTop && elementBottom > triggerBottom) {
+          setIsVisible(true);
         } else {
-          clearInterval(counterInterval);
-          // Cuando esté a punto de llegar a targetCount, reduce la duración a 10 segundos
-          setDuration(10000);
-          return targetCount;
+          setIsVisible(false);
         }
-      });
-    }, interval);
+      }
+    };
 
-    // Limpieza del intervalo al desmontar el componente
-    return () => clearInterval(counterInterval);
-  }, [duration]); // Agrega duration al array de dependencias
+    window.addEventListener('scroll', handleScroll);
+
+    // Limpieza del evento al desmontar el componente
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const targetCount = 600;
+      const interval = duration / targetCount;
+
+      const counterInterval = setInterval(() => {
+        setCount((prevCount) => {
+          if (prevCount < 300) {
+            // Primeros xx números, contar rápidamente
+            return prevCount + 10;
+          } else if (prevCount < targetCount) {
+            return prevCount + 1;
+          } else {
+            clearInterval(counterInterval);
+            setDuration(10000);
+            return targetCount;
+          }
+        });
+      }, interval);
+      // Limpieza del intervalo al desmontar el componente o cuando se alcance el conteo
+      return () => clearInterval(counterInterval);
+    }
+  }, [isVisible, duration]);
 
   return (
     <section className="AboutUs">
@@ -139,8 +166,25 @@ export const Foouter = ({ children }) => (
       backgroundImage: `url(../img/foouter.png)`,
     }}
   >
+    <div className="foouterLogo">
+      <img src="../img/LogotipoBlanco.png" alt="Logo" />
+    </div>
 
 
+
+    <div className="fooutertxt">
+      <div className="foouterBar"></div>
+
+      <h1>Biblioteca Digital de Planeación y <span>Prospectiva de Hidalgo</span></h1>
+      <div className="foouterInfo">
+        <h2>Unidad de Planeación y Prospectiva</h2>
+        <div className="FoouterUbicacion">
+          <img src="../img/ubicacion.png" alt="Logo" />
+          <p>Plaza Juárez S/N Col. Centro <span>Pachuca de Soto, Hidalgo, México.</span></p>
+        </div>
+      </div>
+
+    </div>
 
     {children}
   </section>
@@ -227,7 +271,7 @@ export const CardContent = React.memo(
             /> */}
 
           </div>
-          <h2 className="poke-card__name">
+          <h3 className="poke-card__name">
             <span>{name}</span>
             <svg className="right">
               <use xlinkHref="#icon-rounded-tri-right">
@@ -252,7 +296,7 @@ export const CardContent = React.memo(
                 </svg>
               </use>
             </svg>
-          </h2>
+          </h3>
           <span className="poke-card__pokedex-number">
             <span>{`#${number}`}</span>
             <svg className="right">
