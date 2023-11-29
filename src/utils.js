@@ -40,8 +40,8 @@ export const Pokedex = {
   ],
   cards: [
     {
-      name: "Bulbasaur",
-      types: ["grass", "poison"],
+      name: "Plan Estatal de Desarrollo 2022-2028",
+      types: ["grass", "poison", "Rock"],
       number: "001",
       pokedexIndex: "1"
     },
