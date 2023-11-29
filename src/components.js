@@ -38,7 +38,7 @@ export const BackgroundHome = ({ children }) => (
       Más información
     </button>
     <h2 className="homeh2">"Hoy les puedo decir que en <span>Hidalgo tenemos rumbo y estrategia"</span> </h2>
-    <h3 className="homeh3">Julio R. Menchaca Salazar</h3>
+    <h3 className="homeh3">Julio Menchaca Salazar</h3>
 
     {children}
   </section>
@@ -107,7 +107,12 @@ export const AboutUs = ({ children }) => {
         <img src="../img/libro.png" alt="Logo de la empresa" />
       </div>
       <div className="AboutUstxt">
-        <p className="homeh3">Te damos la bienvenida a la Biblioteca Digital de la SPPC, una iniciativa de la Secretaría de Planeación y Participación Ciudadana enmarcada en el contexto de la Alianza para el Gobierno Abierto (Open Government Partnership), de la cual forma parte el Gobierno de Jalisco. Los esfuerzos de dicha alianza propician compromisos concretos de los gobiernos para promover la transparencia, incrementar la participación ciudadana en los asuntos públicos, combatir la corrupción y aprovechar las nuevas tecnologías para robustecer la gobernanza. Por ello, el Gobierno de Jalisco pone a disposición de la ciudadanía jalisciense, mediante la aplicación de nuevas tecnologías de la información y la comunicación, este amplio repositorio de registros relevantes para el seguimiento de la práctica pública.</p>
+        <p className="homeh3">Bienvenido a la Biblioteca Digital de Planeación, herramienta pública para el almacenamiento y consulta de los documentos, programas, planes, informes, estudios, artículos, análisis, guías y demás instrumentos en los que participa la Unidad de Planeación y Prospectiva del Gobierno del Estado de Hidalgo.
+        </p>
+        <p>Este espacio virtual tiene como objetivo ser una herramienta útil para la población, en donde de manera ágil y sencilla pueden consultar y descargar los materiales que les resulten útiles.
+        </p>
+        <p>Con la Biblioteca Digital de Planeación, contribuimos a llevar a Hidalgo a su máximo potencial.
+        </p>
         <div className="contadorlibros">
           <p>{count}</p>
           <p>Total de publicaciones</p>
@@ -175,7 +180,7 @@ export const Foouter = ({ children }) => (
     <div className="fooutertxt">
       <div className="foouterBar"></div>
 
-      <h1>Biblioteca Digital de Planeación y <span>Prospectiva de Hidalgo</span></h1>
+      <h1>Biblioteca Digital de Planeación</h1>
       <div className="foouterInfo">
         <h2>Unidad de Planeación y Prospectiva</h2>
         <div className="FoouterUbicacion">

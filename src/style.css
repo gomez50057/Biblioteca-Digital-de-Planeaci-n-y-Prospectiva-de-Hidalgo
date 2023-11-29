@@ -184,8 +184,9 @@ body {
 }
 
 .AboutUstxt p {
+  color: #691B31;
   text-align: justify;
-  padding: 3vw;
+  padding: 0 3vw 0 3vw;
   font-size: 16px;
 }
 
@@ -366,7 +367,7 @@ body {
 .foouterBar{
   position: absolute;
   width: 5px;
-  height: 100px;
+  height: 80px;
   margin-left: -10px;
   background: linear-gradient(to left, #BC955B, #BC955B 50%, transparent 50%);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ajusta la opacidad y el tamaño de la sombra según sea necesario */
