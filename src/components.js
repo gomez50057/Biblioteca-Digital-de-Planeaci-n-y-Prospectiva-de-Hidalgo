@@ -22,16 +22,6 @@ export const Header = ({ children }) => (
   </div>
 );
 
-// Tooltip component.
-const Tooltip = ({ children, text }) => {
-  return (
-    <div className="tooltip-container">
-      {children}
-      <span className="tooltip-text">{text}</span>
-    </div>
-  );
-};
-export default Tooltip;
 
 
 // Select component.
@@ -272,77 +262,122 @@ export const Switch = React.forwardRef(({ children }, ref) => (
 ));
 
 
+// Tooltip component.
+const Tooltip = ({ children, text }) => {
+  return (
+    <div className="tooltip-container">
+      {children}
+      <span className="tooltip-text">{text}</span>
+    </div>
+  );
+};
 
+// Modal component.
+const Modal = ({children, isOpen, onClose, booksData}) => {
+  if (!isOpen) {
+    return null;
+  }
+  // const { types, name, year, description, descriptionBook, imgSrc } = booksData;
+
+  const { types, name, year, descriptionBook, pdfSrc } = booksData;
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {/* <img src={imgSrc} alt={`Imagen de ${name}`} /> */}
+        <h2>{name}</h2>
+        <p>{descriptionBook}</p>
+        <p>Año de Publicación: {year}</p>
+        <p>Categoría: {types.join(', ')}</p>
+        <a href={pdfSrc} download target="_blank">
+          <button>Descargar PDF</button>
+        </a>
+        <button onClick={onClose}>Cerrar</button>
+      </div>
+      {children}
+    </div>
+  );
+};
 
 
 // Card content.
 export const CardContent = React.memo(
-  ({ types, name, number }) => {
-    // const srcName = resolveSrcName(name);
+  ({ types, name, year, descriptionBook, pdfSrc}) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const truncatedName = name.length > 40 ? `${name.slice(0, 40)}...` : name;
 
-    return (
-      <div className="book-card-container">
-        <div className="book-card" data-pokemon-type={types[0]}>
-          <div className="book-card__image">
-            <img src="../img/primer.png" alt={`Imagen de ${name}`} />
-          </div>
-          <Tooltip text={name}><h3 className="book-card__name">
-            <span>{truncatedName}</span>
-            <svg className="right">
-              <use xlinkHref="#icon-rounded-tri-right">
-                <svg id="icon-rounded-tri-right" viewBox="0 0 32 32">
-                  <title>rounded-tri-right</title>
-                  <path
-                    className="path1"
-                    d="M3.424 1.76l20.864 28.48c0.8 1.088 2.080 1.728 3.424 1.728h-27.712v-31.936c1.344 0 2.624 0.64 3.424 1.728z"
-                  />
-                </svg>
-              </use>
-            </svg>
-            <svg className="left">
-              <use xlinkHref="#icon-rounded-tri-left">
-                {" "}
-                <svg id="icon-rounded-tri-left" viewBox="0 0 32 32">
-                  <title>rounded-tri-left</title>
-                  <path
-                    className="path1"
-                    d="M28.576 1.728l-20.896 28.48c-0.8 1.088-2.080 1.728-3.424 1.728h27.744v-31.936c-1.344 0-2.624 0.64-3.424 1.728z"
-                  />
-                </svg>
-              </use>
-            </svg>
-          </h3></Tooltip>
+    const booksData = {
+      types,
+      name,
+      year,
+      descriptionBook,
+      pdfSrc,
+    };
 
-          <span className="book-card__pokedex-number">
-            <span>{number}</span>
-            <svg className="right">
-              <use xlinkHref="#icon-rounded-slim-tri-bottom-right">
-                <svg
-                  id="icon-rounded-slim-tri-bottom-right"
-                  viewBox="0 0 32 32"
-                >
-                  <title>rounded-slim-tri-bottom-right</title>
-                  <path
-                    className="path1"
-                    d="M13.472 2.944l-9.312 26.016c-0.64 1.824-2.368 3.040-4.32 3.040v-32.096h17.92c-1.92 0-3.648 1.216-4.288 3.040z"
-                  />
-                </svg>{" "}
-              </use>
-            </svg>
-            <svg className="left">
-              <use xlinkHref="#icon-rounded-slim-tri-bottom-left">
-                <svg id="icon-rounded-slim-tri-bottom-left" viewBox="0 0 32 32">
-                  <title>rounded-slim-tri-bottom-left</title>
-                  <path
-                    className="path1"
-                    d="M18.56 2.848l9.312 26.080c0.64 1.824 2.4 3.040 4.32 3.040v-32.192h-17.984c1.952 0.032 3.68 1.248 4.352 3.072z"
-                  />
-                </svg>
-              </use>
-            </svg>
-          </span>
-          {/* <ul className="book-card__types">
+    return (
+      <>
+        <div className="book-card-container" onClick={() => setIsModalOpen(true)}>
+          <div className="book-card" data-pokemon-type={types[0]}>
+            <div className="book-card__image">
+              <img src="../img/primer.png" alt={`Imagen de ${name}`} />
+            </div>
+            <Tooltip text={name}><h3 className="book-card__name">
+              <span>{truncatedName}</span>
+              <svg className="right">
+                <use xlinkHref="#icon-rounded-tri-right">
+                  <svg id="icon-rounded-tri-right" viewBox="0 0 32 32">
+                    <title>rounded-tri-right</title>
+                    <path
+                      className="path1"
+                      d="M3.424 1.76l20.864 28.48c0.8 1.088 2.080 1.728 3.424 1.728h-27.712v-31.936c1.344 0 2.624 0.64 3.424 1.728z"
+                    />
+                  </svg>
+                </use>
+              </svg>
+              <svg className="left">
+                <use xlinkHref="#icon-rounded-tri-left">
+                  {" "}
+                  <svg id="icon-rounded-tri-left" viewBox="0 0 32 32">
+                    <title>rounded-tri-left</title>
+                    <path
+                      className="path1"
+                      d="M28.576 1.728l-20.896 28.48c-0.8 1.088-2.080 1.728-3.424 1.728h27.744v-31.936c-1.344 0-2.624 0.64-3.424 1.728z"
+                    />
+                  </svg>
+                </use>
+              </svg>
+            </h3></Tooltip>
+
+            <span className="book-card__pokedex-year">
+              <span>{year}</span>
+              <svg className="right">
+                <use xlinkHref="#icon-rounded-slim-tri-bottom-right">
+                  <svg
+                    id="icon-rounded-slim-tri-bottom-right"
+                    viewBox="0 0 32 32"
+                  >
+                    <title>rounded-slim-tri-bottom-right</title>
+                    <path
+                      className="path1"
+                      d="M13.472 2.944l-9.312 26.016c-0.64 1.824-2.368 3.040-4.32 3.040v-32.096h17.92c-1.92 0-3.648 1.216-4.288 3.040z"
+                    />
+                  </svg>{" "}
+                </use>
+              </svg>
+              <svg className="left">
+                <use xlinkHref="#icon-rounded-slim-tri-bottom-left">
+                  <svg id="icon-rounded-slim-tri-bottom-left" viewBox="0 0 32 32">
+                    <title>rounded-slim-tri-bottom-left</title>
+                    <path
+                      className="path1"
+                      d="M18.56 2.848l9.312 26.080c0.64 1.824 2.4 3.040 4.32 3.040v-32.192h-17.984c1.952 0.032 3.68 1.248 4.352 3.072z"
+                    />
+                  </svg>
+                </use>
+              </svg>
+            </span>
+            {/* <ul className="book-card__types">
             {types.map(type => (
               <li
                 key={type}
@@ -352,8 +387,13 @@ export const CardContent = React.memo(
               </li>
             ))}
           </ul> */}
+          </div>
         </div>
-      </div>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} booksData={booksData} />
+
+      </>
+
+
     );
   }
 );

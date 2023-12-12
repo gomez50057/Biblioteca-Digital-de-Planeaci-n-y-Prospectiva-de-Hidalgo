@@ -738,7 +738,7 @@ a {
   right: -1.25em;
 }
 
-.book-card__pokedex-number {
+.book-card__pokedex-year {
   z-index: 1;
   display: block;
   position: absolute;
@@ -751,7 +751,7 @@ a {
   background: white;
 }
 
-.book-card__pokedex-number span {
+.book-card__pokedex-year span {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-style: normal;
@@ -759,7 +759,7 @@ a {
   color: black;
 }
 
-.book-card__pokedex-number svg {
+.book-card__pokedex-year svg {
   display: block;
   position: absolute;
   top: 0;
@@ -768,11 +768,11 @@ a {
   fill: white;
 }
 
-.book-card__pokedex-number svg.left {
+.book-card__pokedex-year svg.left {
   right: 99%;
 }
 
-.book-card__pokedex-number svg.right {
+.book-card__pokedex-year svg.right {
   left: 99%;
 }
 
@@ -847,15 +847,15 @@ a {
 /*  */
 
 
-.book-card[data-pokemon-type="Planes"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="planes"] .book-card__pokedex-year span {
   color: #ff6464;
 }
 
-.book-card[data-pokemon-type="Planes"] .book-card__image {
+.book-card[data-pokemon-type="planes"] .book-card__image {
   background: #ffb4aa;
 }
 
-.book-card[data-pokemon-type="Planes"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="planes"] .book-card__image svg polygon {
   fill: #ffa096;
 }
 
@@ -863,99 +863,99 @@ a {
   background: #ff6464;
 }
 
-.book-card[data-pokemon-type="Programas"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="programas"] .book-card__pokedex-year span {
   color: #828cc8;
 }
 
-.book-card[data-pokemon-type="Programas"] .book-card__image {
+.book-card[data-pokemon-type="programas"] .book-card__image {
   background: #bec8f0;
 }
 
-.book-card[data-pokemon-type="Programas"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="programas"] .book-card__image svg polygon {
   fill: #aab4dc;
 }
 
-.book-card .book-card__types__Programas {
+.book-card .book-card__types__programas {
   background: #828cc8;
 }
 
-.book-card[data-pokemon-type="Acuerdos"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="acuerdos"] .book-card__pokedex-year span {
   color: #b464a0;
 }
 
-.book-card[data-pokemon-type="Acuerdos"] .book-card__image {
+.book-card[data-pokemon-type="acuerdos"] .book-card__image {
   background: #f0bedc;
 }
 
-.book-card[data-pokemon-type="Acuerdos"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="acuerdos"] .book-card__image svg polygon {
   fill: #e6aac8;
 }
 
-.book-card .book-card__types__Acuerdos {
+.book-card .book-card__types__acuerdos {
   background: #b464a0;
 }
 
-.book-card[data-pokemon-type="Catálogos"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="catálogos"] .book-card__pokedex-year span {
   color: #e6b464;
 }
 
-.book-card[data-pokemon-type="Catálogos"] .book-card__image {
+.book-card[data-pokemon-type="catálogos"] .book-card__image {
   background: #fae6be;
 }
 
-.book-card[data-pokemon-type="Catálogos"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="catálogos"] .book-card__image svg polygon {
   fill: #f5d2a0;
 }
 
-.book-card .book-card__types__Catálogos {
+.book-card .book-card__types__catálogos {
   background: #e6b464;
 }
 
-.book-card[data-pokemon-type="Actas"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="actas"] .book-card__pokedex-year span {
   color: #aaa064;
 }
 
-.book-card[data-pokemon-type="Actas"] .book-card__image {
+.book-card[data-pokemon-type="actas"] .book-card__image {
   background: #e6e6be;
 }
 
-.book-card[data-pokemon-type="Actas"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="actas"] .book-card__image svg polygon {
   fill: #d2d2a0;
 }
 
-.book-card .book-card__types__Actas {
+.book-card .book-card__types__actas {
   background: #aaa064;
 }
 
-.book-card[data-pokemon-type="Atlas"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="atlas"] .book-card__pokedex-year span {
   color: #96aa3c;
 }
 
-.book-card[data-pokemon-type="Atlas"] .book-card__image {
+.book-card[data-pokemon-type="atlas"] .book-card__image {
   background: #dce6a0;
 }
 
-.book-card[data-pokemon-type="Atlas"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="atlas"] .book-card__image svg polygon {
   fill: #c8d28c;
 }
 
-.book-card .book-card__types__Atlas {
+.book-card .book-card__types__atlas {
   background: #96aa3c;
 }
 
-.book-card[data-pokemon-type="Informe"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="informe"] .book-card__pokedex-year span {
   color: #826e96;
 }
 
-.book-card[data-pokemon-type="Informe"] .book-card__image {
+.book-card[data-pokemon-type="informe"] .book-card__image {
   background: #dcc8dc;
 }
 
-.book-card[data-pokemon-type="Informe"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="informe"] .book-card__image svg polygon {
   fill: #c8aac8;
 }
 
-.book-card .book-card__types__Informe {
+.book-card .book-card__types__informe {
   background: #826e96;
 }
 
@@ -1041,18 +1041,19 @@ a {
 
 .tooltip-text {
   visibility: hidden;
-  width: 130px;
+  width: 150px;
   background-color: #691B31;
-  color: #BC955B;
+  color: #fff;
   text-align: center;
   border-radius: 4px;
   padding: 4px 8px;
   position: absolute;
-  z-index: 1;
   font-size: 8px;
+  z-index: 9999;
+
   bottom: 125%; 
   left: 50%;
-  margin-left: -60px; 
+  margin-left: -58%; 
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -1069,6 +1070,37 @@ a {
 }
 
 .tooltip-container:hover .tooltip-text {
+
   visibility: visible;
   opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .tooltip-container:hover .tooltip-text{
+    opacity: 0;
+  }
+}
+/*  */
+/* modal */
+/*  */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
 }

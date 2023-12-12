@@ -7,12 +7,15 @@ import { createRoot } from 'react-dom/client';
 import { MuuriComponent, AutoScroller, useData } from "muuri-react";
 /* Utils & components */
 import { Demo, Header, BackgroundHome, AboutUs, Featured, Select, Input, Switch, CardContent, Foouter } from "./components";
-import { Pokedex, useFilter } from "./utils";
+import { datosBibliotecaDigital, useFilter } from "./utils";
 /* Style */
 import "./style.css";
 
 const rootElement = document.getElementById('app');
 const root = createRoot(rootElement);
+
+// const cardInfoOptions = datosBibliotecaDigital.cardInfo.map(option => option === "year" ? "Año" : option);
+
 
 // App.
 const App = () => {
@@ -34,13 +37,15 @@ const App = () => {
   // Memorice a los children para mejorar su rendimiento.
   const children = useMemo(
     () =>
-      Pokedex.cards.map(pokeCard => (
-        <PokeCard
-          key={pokeCard.pokedexIndex}
-          name={pokeCard.name}
-          types={pokeCard.types}
-          number={pokeCard.number}
-          pokedexIndex={pokeCard.pokedexIndex}
+      datosBibliotecaDigital.cards.map(bookCard => (
+        <BookCard
+          key={bookCard.booksIndex}
+          name={bookCard.name}
+          descriptionBook={bookCard.descriptionBook}
+          types={bookCard.types}
+          year={bookCard.year}
+          pdfSrc={bookCard.pdfSrc}
+          booksIndex={bookCard.booksIndex}
         />
       )),
     []
@@ -72,14 +77,15 @@ const App = () => {
           <Input onKeyUp={e => setFilter({ ...filter, name: e.target.value })} />
           {/* Categoria*/}
           <Select
-            values={Pokedex.types}
+            values={datosBibliotecaDigital.types}
             onChange={e => setFilter({ ...filter, type: e.target.value })}
           />
           {/* Nombre, Categoria, Numero */}
           <Select
-            values={Pokedex.cardInfo}
+            values={datosBibliotecaDigital.cardInfo}
             onChange={e => setSort({ ...sort, value: e.target.value })}
           />
+
         </Header>
         {/* Switch */}
         <Switch ref={scrollElemRef}>
@@ -111,13 +117,13 @@ const App = () => {
   );
 };
 
-const PokeCard = props => {
-  const { types, number, name } = props;
-  // e.g. Venosaurus -> Grass Poison.
+const BookCard = props => {
+  const { types, year, name } = props;
+  // Combina los tipos en un solo string (si hay dos tipos)
   const type = `${types[0]} ${types[1] || ""}`;
-  // These data will be used for sorting and filtering.
-  useData({ name, type, number });
-  // Return the content.
+  // Estos datos se utilizarán para ordenar y filtrar.
+  useData({ name, type, year });
+  // Renderiza el componente `CardContent` y pasa todas las propiedades a este componente hijo
   return <CardContent {...props} />;
 };
 

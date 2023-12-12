@@ -18,8 +18,8 @@ export function useFilter(name, type) {
 }
  
 // The list of pokemons.
-export const Pokedex = {
-  cardInfo: ["Categoría ", "Abecedario", "number"],
+export const datosBibliotecaDigital = {
+  cardInfo: ["Categoría ", "Abecedario", "year"],
   types: [
     "All",
     "Planes",
@@ -33,135 +33,150 @@ export const Pokedex = {
   ],
   cards: [
     {
-      name: "Plan Estatal de Desarrollo 2022-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "1",
+      "name": "Programa Especial de Desarrollo de la Secretaría del Despacho de la Persona Titular del Poder Ejecutivo 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡AquíPrograma enfocado a la prioridades de desarrollo integral de la Secretaría del Despacho de la Persona Titular del Poder ejecutivo, fijado en el Plan Estatal de Desarrollo.",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_ESPECIALES/DESPACHO_DEL_GOBERNADOR.pdf",
+      "booksIndex": 1
     },
     {
-      name: "PROGRAMA ESPECIAL DE DESARROLLO DE OFICIALÍA MAYOR 2023–2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "2",
+      "name": "Programa Especial de Desarrollo de Oficialía Mayor 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "Programa enfocado a la prioridades de desarrollo integral de la Secretaría del Oficialía Mayor, fijado en el Plan Estatal de Desarrollo.",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_ESPECIALES/Programa_Especial_de_Desarrollo_de_Oficialia_Mayor.pdf",
+      "booksIndex": 2
     },
     {
-      name: "PROGRAMA ESPECIAL DE DESARROLLO DE PROCURACIÓN DE JUSTICIA 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "3",
+      "name": "Programa Especial de Desarrollo de Planeación y Prospectiva 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "Programa enfocado a la prioridades de desarrollo integral de la Unidad de Planeación y Prospectiva, fijado en el Plan Estatal de Desarrollo.",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_ESPECIALES/PROGRAMA_ESPECIAL_UPLAPH.pdf",
+      "booksIndex": 3
     },
     {
-      name: "PROGRAMA ESPECIAL DE DESARROLLO DE PLANEACIÓN Y PROSPECTIVA 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "4",
+      "name": "Programa Sectorial de Desarrollo de Gobierno 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/SECRETARIA_DE_GOBIERNO.pdf",
+      "booksIndex": 4
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE HACIENDA 2023 - 2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "5",
+      "name": "Programa Sectorial de Desarrollo de Hacienda 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarollo_de_Hacienda.pdf",
+      "booksIndex": 5
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE AGRICULTURA Y DESARROLLO RURAL 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "6",
+      "name": "Programa Sectorial de Desarrollo para el Bienestar e Inclusión Social 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Bienestar.pdf",
+      "booksIndex": 6
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO PARA EL BIENESTAR E INCLUSIÓN SOCIAL 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "7",
+      "name": "Programa Sectorial de Desarrollo de Infraestructura Pública y Desarrollo Urbano Sostenible 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_SIPDUS.pdf",
+      "booksIndex": 7
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE CONTRALORÍA 2023-2028",
-      types: ["Planes"],
-      number: "008",
-      pokedexIndex: "8",
+      "name": "Programa Sectorial de Desarrollo Económico 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_Economico_2023-2028.pdf",
+      "booksIndex": 8
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE CULTURA 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "9",
+      "name": "Programa Sectorial de Desarrollo de Medio Ambiente y Recursos Naturales 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_Medio_Ambiente_y_Recursos_Naturales_2023-2028_.pdf",
+      "booksIndex": 9
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE EDUCACIÓN 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "10",
+      "name": "Programa Sectorial de Desarrollo de Agricultura y Desarrollo Rural 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Agricultura.pdf",
+      "booksIndex": 10
     },
     {
-      name: "PROGRAMA SECTORIAL DE SALUD 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "11",
+      "name": "Programa Sectorial de Desarrollo de Turismo Sostenible 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Turismo_Sostenible.pdf",
+      "booksIndex": 11
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE SEGURIDAD PÚBLICA 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "12",
+      "name": "Programa Sectorial de Desarrollo de Contraloría 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Contraloria.pdf",
+      "booksIndex": 12
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE MOVILIDAD Y TRANSPORTE 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "13",
+      "name": "Programa Sectorial de Desarrollo de Educación 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Educacion.pdf",
+      "booksIndex": 13
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE TURISMO SOSTENIBLE 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "14",
+      "name": "Programa Sectorial de Desarrollo de Salud 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Salud.pdf",
+      "booksIndex": 14
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DEL TRABAJO Y LA PREVISIÓN SOCIAL 2023 - 2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "15",
+      "name": "Programa Sectorial de Desarrollo de Seguridad Pública 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Seguridad_Publica.pdf",
+      "booksIndex": 15
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO ECONÓMICO 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "16",
+      "name": "Programa Sectorial de Desarrollo del Trabajo y la Previsión Social 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_del_Trabajo_y_la_Prevision_Social.pdf",
+      "booksIndex": 16
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO MEDIO AMBIENTE Y RECURSOS NATURALES 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "17",
+      "name": "Programa Sectorial de Desarrollo de Movilidad y Transporte 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_SEMOT.pdf",
+      "booksIndex": 17
     },
     {
-      name: "PROGRAMA SECTORIAL DE DESARROLLO DE INFRAESTRUCTURA PÚBLICA Y DESARROLLO URBANO SOSTENIBLE 2023-2028",
-      types: ["Planes"],
-      number: "2023",
-      pokedexIndex: "18",
-    },    
+      "name": "Programa Sectorial de Desarrollo de Cultura 2023 - 2028",
+      "types": ["programas"],
+      "year": "2023",
+      "descriptionBook": "¡Aquí va la descripción espera!",
+      "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Cultura_2023-2028.pdf",
+      "booksIndex": 18
+    },
   ]
 };
 
-// Devuelve el nombre para encontrar la imagen de Pokémon.
-export function resolveSrcName(name) {
-  if (name.indexOf("Mega") > -1) {
-    name = name.split(" ").slice(1);
-    name[0] = name[0] + "-Mega";
-    return name.join("_");
-  }
 
-  if (name.indexOf(" male") > -1 || name.indexOf(" female") > -1) {
-    return name.split(" ")[0];
-  }
-
-  if (name === "Farfetch'd") {
-    return "Farfetch_27d";
-  }
-
-  if (name.indexOf(" ") > -1) {
-    return name.replace(" ", "_");
-  }
-
-  return name;
-}
