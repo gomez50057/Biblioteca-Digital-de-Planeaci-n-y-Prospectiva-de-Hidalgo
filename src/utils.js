@@ -16,136 +16,129 @@ export function useFilter(name, type) {
     [name, type]
   );
 }
-
+ 
 // The list of pokemons.
 export const Pokedex = {
   cardInfo: ["Categoría ", "Abecedario", "number"],
   types: [
     "All",
-    "Bug",
-    "Dragon",
-    "Electric",
-    "Fighting",
-    "Fire",
-    "Flying",
-    "Ghost",
-    "Grass",
-    "Ground",
-    "Ice",
-    "Normal",
-    "Poison",
-    "Psychic",
-    "Rock",
-    "Water"
+    "Planes",
+    "Programas",
+    "Acuerdos",
+    "Catálogos",
+    "Actas",
+    "Guías",
+    "Atlas",
+    "Informe"
   ],
   cards: [
     {
       name: "Plan Estatal de Desarrollo 2022-2028",
-      types: ["grass", "poison"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "1"
+      pokedexIndex: "1",
     },
     {
       name: "PROGRAMA ESPECIAL DE DESARROLLO DE OFICIALÍA MAYOR 2023–2028",
-      types: ["grass", "poison"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "2"
+      pokedexIndex: "2",
     },
     {
       name: "PROGRAMA ESPECIAL DE DESARROLLO DE PROCURACIÓN DE JUSTICIA 2023-2028",
-      types: ["grass", "poison"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "3"
+      pokedexIndex: "3",
     },
     {
       name: "PROGRAMA ESPECIAL DE DESARROLLO DE PLANEACIÓN Y PROSPECTIVA 2023-2028",
-      types: ["grass", "poison"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "4"
+      pokedexIndex: "4",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE HACIENDA 2023 - 2028",
-      types: ["fire"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "5"
+      pokedexIndex: "5",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE AGRICULTURA Y DESARROLLO RURAL 2023-2028",
-      types: ["fire"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "6"
+      pokedexIndex: "6",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO PARA EL BIENESTAR E INCLUSIÓN SOCIAL 2023-2028",
-      types: ["fire", "flying"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "7"
+      pokedexIndex: "7",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE CONTRALORÍA 2023-2028",
-      types: ["fire", "flying"],
+      types: ["Planes"],
       number: "008",
-      pokedexIndex: "8"
+      pokedexIndex: "8",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE CULTURA 2023-2028",
-      types: ["fire", "dragon"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "9"
+      pokedexIndex: "9",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE EDUCACIÓN 2023-2028",
-      types: ["water"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "10"
+      pokedexIndex: "10",
     },
     {
       name: "PROGRAMA SECTORIAL DE SALUD 2023-2028",
-      types: ["water"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "11"
+      pokedexIndex: "11",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE SEGURIDAD PÚBLICA 2023-2028",
-      types: ["water"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "12"
+      pokedexIndex: "12",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE MOVILIDAD Y TRANSPORTE 2023-2028",
-      types: ["water"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "13"
+      pokedexIndex: "13",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE TURISMO SOSTENIBLE 2023-2028",
-      types: ["electric"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "14"
+      pokedexIndex: "14",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DEL TRABAJO Y LA PREVISIÓN SOCIAL 2023 - 2028",
-      types: ["electric"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "15"
+      pokedexIndex: "15",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO ECONÓMICO 2023-2028",
-      types: ["fighting"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "16"
+      pokedexIndex: "16",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO MEDIO AMBIENTE Y RECURSOS NATURALES 2023-2028",
-      types: ["fighting"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "17"
+      pokedexIndex: "17",
     },
     {
       name: "PROGRAMA SECTORIAL DE DESARROLLO DE INFRAESTRUCTURA PÚBLICA Y DESARROLLO URBANO SOSTENIBLE 2023-2028",
-      types: ["fire"],
+      types: ["Planes"],
       number: "2023",
-      pokedexIndex: "18"
+      pokedexIndex: "18",
     },    
   ]
 };

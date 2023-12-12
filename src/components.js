@@ -1,8 +1,5 @@
 // import { resolveSrcName } from "./utils";
-import React, { useState, useEffect } from "react";
-
-
-
+import React, { useState, useEffect, forwardRef } from "react";
 // Demo component.
 export const Demo = ({ children }) => (
   <section className="grid-demo">
@@ -25,29 +22,51 @@ export const Header = ({ children }) => (
   </div>
 );
 
-// Select component.
-export const BackgroundHome = ({ children }) => (
-  <section className="home"
-    style={{
-      backgroundImage: `url(../img/BibliotecaDigital.png)`,
-      paddingLeft: "20px",
-    }}
-  >
-    <div className="logotipo">
-      <img src="../img/Logotipo.png" alt="Logo de la empresa" />
+// Tooltip component.
+const Tooltip = ({ children, text }) => {
+  return (
+    <div className="tooltip-container">
+      {children}
+      <span className="tooltip-text">{text}</span>
     </div>
-    <button className="home-button">
-      Más información
-    </button>
-    <h2 className="homeh2">"Una educación sólida es clave <span>para el futuro de nuestro estado."</span> </h2>
-    <h3 className="homeh3">Julio Menchaca Salazar</h3>
+  );
+};
+export default Tooltip;
 
-    {children}
-  </section>
-);
 
 // Select component.
-export const AboutUs = ({ children }) => {
+export const BackgroundHome = ({ children }) => {
+  const handleButtonClick = () => {
+    const aboutUsElement = document.getElementById('aboutUs');
+    if (aboutUsElement) {
+      aboutUsElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="home"
+      style={{
+        backgroundImage: `url(../img/BibliotecaDigital.png)`,
+        paddingLeft: "20px",
+      }}
+    >
+      <div className="logotipo">
+        <img src="../img/Logotipo.png" alt="Logo de la empresa" />
+      </div>
+      <button className="home-button" onClick={handleButtonClick}>
+        Más información
+      </button>
+      <h2 className="homeh2">"Una educación sólida es clave <span>para el futuro de nuestro estado."</span> </h2>
+      <h3 className="homeh3">Julio Menchaca Salazar</h3>
+      {forwardRef.current && <AboutUs ref={forwardRef} />}
+
+      {children}
+    </section>
+  );
+};
+
+// Select component.
+export const AboutUs = forwardRef(({ children }, ref) => {
   const [count, setCount] = useState(0);
   const [duration, setDuration] = useState(4000);
   const [isVisible, setIsVisible] = useState(false);
@@ -104,7 +123,7 @@ export const AboutUs = ({ children }) => {
   }, [isVisible, duration]);
 
   return (
-    <section className="AboutUs">
+    <section id="aboutUs" ref={ref} className="AboutUs">
       <div className="AboutUsIMG">
         <img src="../img/libro.png" alt="Logo de la empresa" />
       </div>
@@ -124,7 +143,7 @@ export const AboutUs = ({ children }) => {
       {children}
     </section>
   );
-};
+});
 
 // Select component.
 export const Featured = ({ children }) => (
@@ -260,18 +279,16 @@ export const Switch = React.forwardRef(({ children }, ref) => (
 export const CardContent = React.memo(
   ({ types, name, number }) => {
     // const srcName = resolveSrcName(name);
+    const truncatedName = name.length > 40 ? `${name.slice(0, 40)}...` : name;
 
     return (
       <div className="book-card-container">
-        <div
-          className="book-card"
-          data-pokemon-type={types[0]}
-        >
+        <div className="book-card" data-pokemon-type={types[0]}>
           <div className="book-card__image">
             <img src="../img/primer.png" alt={`Imagen de ${name}`} />
           </div>
-          <h3 className="book-card__name">
-            <span>{name}</span>
+          <Tooltip text={name}><h3 className="book-card__name">
+            <span>{truncatedName}</span>
             <svg className="right">
               <use xlinkHref="#icon-rounded-tri-right">
                 <svg id="icon-rounded-tri-right" viewBox="0 0 32 32">
@@ -295,7 +312,8 @@ export const CardContent = React.memo(
                 </svg>
               </use>
             </svg>
-          </h3>
+          </h3></Tooltip>
+
           <span className="book-card__pokedex-number">
             <span>{number}</span>
             <svg className="right">

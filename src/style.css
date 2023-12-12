@@ -266,7 +266,7 @@ body {
 }
 
 .featured .item img {
-  width: 120px;
+  width: 180px;
   height: auto;
   margin: 10px;
   border-radius: 6%;
@@ -718,20 +718,6 @@ a {
   display: block;
   font-size: 1em;
   color: #6F7271;
-
-
-
-
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
- 
-}
-
-.book-card__name span:hover {
-  white-space: normal;
-  overflow: visible;
-  text-overflow: unset;
 }
 
 .book-card__name svg {
@@ -860,288 +846,117 @@ a {
 /* Card Style Type*/
 /*  */
 
-.book-card[data-pokemon-type="normal"] .book-card__pokedex-number span {
-  color: #b4966e;
-}
 
-.book-card[data-pokemon-type="normal"] .book-card__image {
-  background: #e6d2b4;
-}
-
-.book-card[data-pokemon-type="normal"] .book-card__image svg polygon {
-  fill: #d2bea0;
-}
-
-.book-card .book-card__types__normal {
-  background: #b4966e;
-}
-
-.book-card[data-pokemon-type="fighting"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="Planes"] .book-card__pokedex-number span {
   color: #ff6464;
 }
 
-.book-card[data-pokemon-type="fighting"] .book-card__image {
+.book-card[data-pokemon-type="Planes"] .book-card__image {
   background: #ffb4aa;
 }
 
-.book-card[data-pokemon-type="fighting"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="Planes"] .book-card__image svg polygon {
   fill: #ffa096;
 }
 
-.book-card .book-card__types__fighting {
+.book-card .book-card__types__planes {
   background: #ff6464;
 }
 
-.book-card[data-pokemon-type="flying"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="Programas"] .book-card__pokedex-number span {
   color: #828cc8;
 }
 
-.book-card[data-pokemon-type="flying"] .book-card__image {
+.book-card[data-pokemon-type="Programas"] .book-card__image {
   background: #bec8f0;
 }
 
-.book-card[data-pokemon-type="flying"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="Programas"] .book-card__image svg polygon {
   fill: #aab4dc;
 }
 
-.book-card .book-card__types__flying {
+.book-card .book-card__types__Programas {
   background: #828cc8;
 }
 
-.book-card[data-pokemon-type="poison"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="Acuerdos"] .book-card__pokedex-number span {
   color: #b464a0;
 }
 
-.book-card[data-pokemon-type="poison"] .book-card__image {
+.book-card[data-pokemon-type="Acuerdos"] .book-card__image {
   background: #f0bedc;
 }
 
-.book-card[data-pokemon-type="poison"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="Acuerdos"] .book-card__image svg polygon {
   fill: #e6aac8;
 }
 
-.book-card .book-card__types__poison {
+.book-card .book-card__types__Acuerdos {
   background: #b464a0;
 }
 
-.book-card[data-pokemon-type="ground"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="Catálogos"] .book-card__pokedex-number span {
   color: #e6b464;
 }
 
-.book-card[data-pokemon-type="ground"] .book-card__image {
+.book-card[data-pokemon-type="Catálogos"] .book-card__image {
   background: #fae6be;
 }
 
-.book-card[data-pokemon-type="ground"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="Catálogos"] .book-card__image svg polygon {
   fill: #f5d2a0;
 }
 
-.book-card .book-card__types__ground {
+.book-card .book-card__types__Catálogos {
   background: #e6b464;
 }
 
-.book-card[data-pokemon-type="rock"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="Actas"] .book-card__pokedex-number span {
   color: #aaa064;
 }
 
-.book-card[data-pokemon-type="rock"] .book-card__image {
+.book-card[data-pokemon-type="Actas"] .book-card__image {
   background: #e6e6be;
 }
 
-.book-card[data-pokemon-type="rock"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="Actas"] .book-card__image svg polygon {
   fill: #d2d2a0;
 }
 
-.book-card .book-card__types__rock {
+.book-card .book-card__types__Actas {
   background: #aaa064;
 }
 
-.book-card[data-pokemon-type="bug"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="Atlas"] .book-card__pokedex-number span {
   color: #96aa3c;
 }
 
-.book-card[data-pokemon-type="bug"] .book-card__image {
+.book-card[data-pokemon-type="Atlas"] .book-card__image {
   background: #dce6a0;
 }
 
-.book-card[data-pokemon-type="bug"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="Atlas"] .book-card__image svg polygon {
   fill: #c8d28c;
 }
 
-.book-card .book-card__types__bug {
+.book-card .book-card__types__Atlas {
   background: #96aa3c;
 }
 
-.book-card[data-pokemon-type="ghost"] .book-card__pokedex-number span {
+.book-card[data-pokemon-type="Informe"] .book-card__pokedex-number span {
   color: #826e96;
 }
 
-.book-card[data-pokemon-type="ghost"] .book-card__image {
+.book-card[data-pokemon-type="Informe"] .book-card__image {
   background: #dcc8dc;
 }
 
-.book-card[data-pokemon-type="ghost"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="Informe"] .book-card__image svg polygon {
   fill: #c8aac8;
 }
 
-.book-card .book-card__types__ghost {
+.book-card .book-card__types__Informe {
   background: #826e96;
-}
-
-.book-card[data-pokemon-type="steel"] .book-card__pokedex-number span {
-  color: #8cb4be;
-}
-
-.book-card[data-pokemon-type="steel"] .book-card__image {
-  background: #d2e6eb;
-}
-
-.book-card[data-pokemon-type="steel"] .book-card__image svg polygon {
-  fill: #b4d2dc;
-}
-
-.book-card .book-card__types__steel {
-  background: #8cb4be;
-}
-
-.book-card[data-pokemon-type="fire"] .book-card__pokedex-number span {
-  color: #fb7850;
-}
-
-.book-card[data-pokemon-type="fire"] .book-card__image {
-  background: #ffd2a0;
-}
-
-.book-card[data-pokemon-type="fire"] .book-card__image svg polygon {
-  fill: #ffbe87;
-}
-
-.book-card .book-card__types__fire {
-  background: #fb7850;
-}
-
-.book-card[data-pokemon-type="water"] .book-card__pokedex-number span {
-  color: #50c8dc;
-}
-
-.book-card[data-pokemon-type="water"] .book-card__image {
-  background: #b4e6f0;
-}
-
-.book-card[data-pokemon-type="water"] .book-card__image svg polygon {
-  fill: #96dce6;
-}
-
-.book-card .book-card__types__water {
-  background: #50c8dc;
-}
-
-.book-card[data-pokemon-type="grass"] .book-card__pokedex-number span {
-  color: #78c85a;
-}
-
-.book-card[data-pokemon-type="grass"] .book-card__image {
-  background: #dcf0b4;
-}
-
-.book-card[data-pokemon-type="grass"] .book-card__image svg polygon {
-  fill: #bedc96;
-}
-
-.book-card .book-card__types__grass {
-  background: #78c85a;
-}
-
-.book-card[data-pokemon-type="electric"] .book-card__pokedex-number span {
-  color: #ffc80a;
-}
-
-.book-card[data-pokemon-type="electric"] .book-card__image {
-  background: #fff0be;
-}
-
-.book-card[data-pokemon-type="electric"] .book-card__image svg polygon {
-  fill: #ffdc82;
-}
-
-.book-card .book-card__types__electric {
-  background: #ffc80a;
-}
-
-.book-card[data-pokemon-type="psychic"] .book-card__pokedex-number span {
-  color: #ff648c;
-}
-
-.book-card[data-pokemon-type="psychic"] .book-card__image {
-  background: #ffd2d7;
-}
-
-.book-card[data-pokemon-type="psychic"] .book-card__image svg polygon {
-  fill: #ffb9c3;
-}
-
-.book-card .book-card__types__psychic {
-  background: #ff648c;
-}
-
-.book-card[data-pokemon-type="ice"] .book-card__pokedex-number span {
-  color: #6edcd2;
-}
-
-.book-card[data-pokemon-type="ice"] .book-card__image {
-  background: #d2f0f0;
-}
-
-.book-card[data-pokemon-type="ice"] .book-card__image svg polygon {
-  fill: #aae1e1;
-}
-
-.book-card .book-card__types__ice {
-  background: #6edcd2;
-}
-
-.book-card[data-pokemon-type="dragon"] .book-card__pokedex-number span {
-  color: #5a64aa;
-}
-
-.book-card[data-pokemon-type="dragon"] .book-card__image {
-  background: #c8dcff;
-}
-
-.book-card[data-pokemon-type="dragon"] .book-card__image svg polygon {
-  fill: #afc8f0;
-}
-
-.book-card .book-card__types__dragon {
-  background: #5a64aa;
-}
-
-.book-card[data-pokemon-type="dark"] .book-card__pokedex-number span {
-  color: #5a5050;
-}
-
-.book-card[data-pokemon-type="dark"] .book-card__image {
-  background: #e6dcdc;
-}
-
-.book-card[data-pokemon-type="dark"] .book-card__image svg polygon {
-  fill: #d2c3be;
-}
-
-.book-card .book-card__types__dark {
-  background: #5a5050;
-}
-
-.book-card[data-pokemon-type="fairy"] .book-card__pokedex-number span {
-  color: #ff78aa;
-}
-
-.book-card[data-pokemon-type="fairy"] .book-card__image {
-  background: #ffd7e6;
-}
-
-.book-card[data-pokemon-type="fairy"] .book-card__image svg polygon {
-  fill: #ffbed7;
 }
 
 
@@ -1215,4 +1030,45 @@ a {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #6F7271;
+}
+/*  */
+/* Tooltip */
+/*  */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 130px;
+  background-color: #691B31;
+  color: #BC955B;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: absolute;
+  z-index: 1;
+  font-size: 8px;
+  bottom: 125%; 
+  left: 50%;
+  margin-left: -60px; 
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px; 
+  border-width: 5px;
+  border-style: solid;
+  border-color: #691B31 transparent transparent transparent; 
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
