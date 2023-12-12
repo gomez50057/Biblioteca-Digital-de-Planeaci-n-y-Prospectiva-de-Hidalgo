@@ -19,7 +19,7 @@ export function useFilter(name, type) {
 
 // The list of pokemons.
 export const Pokedex = {
-  cardInfo: ["Categoría ", "Abecedario", "Año"],
+  cardInfo: ["Categoría ", "Abecedario", "number"],
   types: [
     "All",
     "Bug",
@@ -41,584 +41,116 @@ export const Pokedex = {
   cards: [
     {
       name: "Plan Estatal de Desarrollo 2022-2028",
-      types: ["grass", "poison", "Rock"],
-      number: "001",
+      types: ["grass", "poison"],
+      number: "2023",
       pokedexIndex: "1"
     },
     {
-      name: "Ivysaur",
+      name: "PROGRAMA ESPECIAL DE DESARROLLO DE OFICIALÍA MAYOR 2023–2028",
       types: ["grass", "poison"],
-      number: "002",
+      number: "2023",
       pokedexIndex: "2"
     },
     {
-      name: "Venusaur",
+      name: "PROGRAMA ESPECIAL DE DESARROLLO DE PROCURACIÓN DE JUSTICIA 2023-2028",
       types: ["grass", "poison"],
-      number: "003",
+      number: "2023",
       pokedexIndex: "3"
     },
     {
-      name: "Mega Venusaur",
+      name: "PROGRAMA ESPECIAL DE DESARROLLO DE PLANEACIÓN Y PROSPECTIVA 2023-2028",
       types: ["grass", "poison"],
-      number: "003",
+      number: "2023",
       pokedexIndex: "4"
     },
     {
-      name: "Charmander",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE HACIENDA 2023 - 2028",
       types: ["fire"],
-      number: "004",
+      number: "2023",
       pokedexIndex: "5"
     },
     {
-      name: "Charmeleon",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE AGRICULTURA Y DESARROLLO RURAL 2023-2028",
       types: ["fire"],
-      number: "005",
+      number: "2023",
       pokedexIndex: "6"
     },
     {
-      name: "Charizard",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO PARA EL BIENESTAR E INCLUSIÓN SOCIAL 2023-2028",
       types: ["fire", "flying"],
-      number: "006",
+      number: "2023",
       pokedexIndex: "7"
     },
     {
-      name: "Mega Charizard Y",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE CONTRALORÍA 2023-2028",
       types: ["fire", "flying"],
-      number: "006",
-      pokedexIndex: "9"
-    },
-    {
-      name: "Mega Charizard X",
-      types: ["fire", "dragon"],
-      number: "006",
+      number: "008",
       pokedexIndex: "8"
     },
     {
-      name: "Squirtle",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE CULTURA 2023-2028",
+      types: ["fire", "dragon"],
+      number: "2023",
+      pokedexIndex: "9"
+    },
+    {
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE EDUCACIÓN 2023-2028",
       types: ["water"],
-      number: "007",
+      number: "2023",
       pokedexIndex: "10"
     },
     {
-      name: "Wartortle",
+      name: "PROGRAMA SECTORIAL DE SALUD 2023-2028",
       types: ["water"],
-      number: "008",
+      number: "2023",
       pokedexIndex: "11"
     },
     {
-      name: "Blastoise",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE SEGURIDAD PÚBLICA 2023-2028",
       types: ["water"],
-      number: "009",
+      number: "2023",
       pokedexIndex: "12"
     },
     {
-      name: "Mega Blastoise",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE MOVILIDAD Y TRANSPORTE 2023-2028",
       types: ["water"],
-      number: "009",
+      number: "2023",
       pokedexIndex: "13"
     },
     {
-      name: "Pikachu",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE TURISMO SOSTENIBLE 2023-2028",
       types: ["electric"],
-      number: "025",
-      pokedexIndex: "33"
+      number: "2023",
+      pokedexIndex: "14"
     },
     {
-      name: "Raichu",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DEL TRABAJO Y LA PREVISIÓN SOCIAL 2023 - 2028",
       types: ["electric"],
-      number: "026",
-      pokedexIndex: "34"
+      number: "2023",
+      pokedexIndex: "15"
     },
     {
-      name: "Mankey",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO ECONÓMICO 2023-2028",
       types: ["fighting"],
-      number: "056",
-      pokedexIndex: "70"
+      number: "2023",
+      pokedexIndex: "16"
     },
     {
-      name: "Primeape",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO MEDIO AMBIENTE Y RECURSOS NATURALES 2023-2028",
       types: ["fighting"],
-      number: "057",
-      pokedexIndex: "71"
+      number: "2023",
+      pokedexIndex: "17"
     },
     {
-      name: "Growlithe",
+      name: "PROGRAMA SECTORIAL DE DESARROLLO DE INFRAESTRUCTURA PÚBLICA Y DESARROLLO URBANO SOSTENIBLE 2023-2028",
       types: ["fire"],
-      number: "058",
-      pokedexIndex: "72"
-    },
-    {
-      name: "Arcanine",
-      types: ["fire"],
-      number: "059",
-      pokedexIndex: "73"
-    },
-    {
-      name: "Poliwag",
-      types: ["water"],
-      number: "060",
-      pokedexIndex: "74"
-    },
-    {
-      name: "Poliwhirl",
-      types: ["water"],
-      number: "061",
-      pokedexIndex: "75"
-    },
-    {
-      name: "Poliwrath",
-      types: ["water", "fighting"],
-      number: "062",
-      pokedexIndex: "76"
-    },
-    {
-      name: "Abra",
-      types: ["psychic"],
-      number: "063",
-      pokedexIndex: "77"
-    },
-    {
-      name: "Kadabra",
-      types: ["psychic"],
-      number: "064",
-      pokedexIndex: "78"
-    },
-    {
-      name: "Alakazam",
-      types: ["psychic"],
-      number: "065",
-      pokedexIndex: "79"
-    },
-    {
-      name: "Mega Alakazam",
-      types: ["psychic"],
-      number: "065",
-      pokedexIndex: "80"
-    },
-    {
-      name: "Machop",
-      types: ["fighting"],
-      number: "066",
-      pokedexIndex: "81"
-    },
-    {
-      name: "Machoke",
-      types: ["fighting"],
-      number: "067",
-      pokedexIndex: "82"
-    },
-    {
-      name: "Machamp",
-      types: ["fighting"],
-      number: "068",
-      pokedexIndex: "83"
-    },
-    {
-      name: "Bellsprout",
-      types: ["grass", "poison"],
-      number: "069",
-      pokedexIndex: "84"
-    },
-    {
-      name: "Weepinbell",
-      types: ["grass", "poison"],
-      number: "070",
-      pokedexIndex: "85"
-    },
-    {
-      name: "Victreebel",
-      types: ["grass", "poison"],
-      number: "071",
-      pokedexIndex: "86"
-    },
-    {
-      name: "Tentacool",
-      types: ["water", "poison"],
-      number: "072",
-      pokedexIndex: "87"
-    },
-    {
-      name: "Tentacruel",
-      types: ["water", "poison"],
-      number: "073",
-      pokedexIndex: "88"
-    },
-    {
-      name: "Geodude",
-      types: ["rock", "ground"],
-      number: "074",
-      pokedexIndex: "89"
-    },
-    {
-      name: "Graveler",
-      types: ["rock", "ground"],
-      number: "075",
-      pokedexIndex: "90"
-    },
-    {
-      name: "Golem",
-      types: ["rock", "ground"],
-      number: "076",
-      pokedexIndex: "91"
-    },
-    {
-      name: "Ponyta",
-      types: ["fire"],
-      number: "077",
-      pokedexIndex: "92"
-    },
-    {
-      name: "Rapidash",
-      types: ["fire"],
-      number: "078",
-      pokedexIndex: "93"
-    },
-    {
-      name: "Slowpoke",
-      types: ["water", "psychic"],
-      number: "079",
-      pokedexIndex: "94"
-    },
-    {
-      name: "Slowbro",
-      types: ["water", "psychic"],
-      number: "080",
-      pokedexIndex: "95"
-    },
-    {
-      name: "Mega Slowbro",
-      types: ["water", "psychic"],
-      number: "080",
-      pokedexIndex: "96"
-    },
-    {
-      name: "Shellder",
-      types: ["water"],
-      number: "090",
-      pokedexIndex: "106"
-    },
-    {
-      name: "Cloyster",
-      types: ["water", "ice"],
-      number: "091",
-      pokedexIndex: "107"
-    },
-    {
-      name: "Gastly",
-      types: ["ghost", "poison"],
-      number: "092",
-      pokedexIndex: "108"
-    },
-    {
-      name: "Haunter",
-      types: ["ghost", "poison"],
-      number: "093",
-      pokedexIndex: "109"
-    },
-    {
-      name: "Gengar",
-      types: ["ghost", "poison"],
-      number: "094",
-      pokedexIndex: "110"
-    },
-    {
-      name: "Mega Gengar",
-      types: ["ghost", "poison"],
-      number: "094",
-      pokedexIndex: "111"
-    },
-    {
-      name: "Onix",
-      types: ["rock", "ground"],
-      number: "095",
-      pokedexIndex: "112"
-    },
-    {
-      name: "Exeggcute",
-      types: ["grass", "psychic"],
-      number: "102",
-      pokedexIndex: "119"
-    },
-    {
-      name: "Exeggutor",
-      types: ["grass", "psychic"],
-      number: "103",
-      pokedexIndex: "120"
-    },
-    {
-      name: "Cubone",
-      types: ["ground"],
-      number: "104",
-      pokedexIndex: "122"
-    },
-    {
-      name: "Marowak",
-      types: ["ground"],
-      number: "105",
-      pokedexIndex: "123"
-    },
-    {
-      name: "Hitmonlee",
-      types: ["fighting"],
-      number: "106",
-      pokedexIndex: "125"
-    },
-    {
-      name: "Hitmonchan",
-      types: ["fighting"],
-      number: "107",
-      pokedexIndex: "126"
-    },
-    {
-      name: "Lickitung",
-      types: ["normal"],
-      number: "108",
-      pokedexIndex: "127"
-    },
-    {
-      name: "Koffing",
-      types: ["poison"],
-      number: "109",
-      pokedexIndex: "128"
-    },
-    {
-      name: "Weezing",
-      types: ["poison"],
-      number: "110",
-      pokedexIndex: "129"
-    },
-    {
-      name: "Rhyhorn",
-      types: ["ground", "rock"],
-      number: "111",
-      pokedexIndex: "130"
-    },
-    {
-      name: "Rhydon",
-      types: ["ground", "rock"],
-      number: "112",
-      pokedexIndex: "131"
-    },
-    {
-      name: "Chansey",
-      types: ["normal"],
-      number: "113",
-      pokedexIndex: "132"
-    },
-    {
-      name: "Tangela",
-      types: ["grass"],
-      number: "114",
-      pokedexIndex: "133"
-    },
-    {
-      name: "Kangaskhan",
-      types: ["normal"],
-      number: "115",
-      pokedexIndex: "134"
-    },
-    {
-      name: "Mega Kangaskhan",
-      types: ["normal"],
-      number: "115",
-      pokedexIndex: "135"
-    },
-    {
-      name: "Horsea",
-      types: ["water"],
-      number: "116",
-      pokedexIndex: "136"
-    },
-    {
-      name: "Staryu",
-      types: ["water"],
-      number: "120",
-      pokedexIndex: "140"
-    },
-    {
-      name: "Starmie",
-      types: ["water", "psychic"],
-      number: "121",
-      pokedexIndex: "141"
-    },
-    {
-      name: "Mr. Mime",
-      types: ["psychic", "fairy"],
-      number: "122",
-      pokedexIndex: "142"
-    },
-    {
-      name: "Scyther",
-      types: ["bug", "flying"],
-      number: "123",
-      pokedexIndex: "143"
-    },
-    {
-      name: "Jynx",
-      types: ["ice", "psychic"],
-      number: "124",
-      pokedexIndex: "144"
-    },
-    {
-      name: "Electabuzz",
-      types: ["electric"],
-      number: "125",
-      pokedexIndex: "145"
-    },
-    {
-      name: "Magmar",
-      types: ["fire"],
-      number: "126",
-      pokedexIndex: "146"
-    },
-    {
-      name: "Pinsir",
-      types: ["bug"],
-      number: "127",
-      pokedexIndex: "147"
-    },
-    {
-      name: "Mega Pinsir",
-      types: ["bug", "flying"],
-      number: "127",
-      pokedexIndex: "148"
-    },
-    {
-      name: "Tauros",
-      types: ["normal"],
-      number: "128",
-      pokedexIndex: "149"
-    },
-    {
-      name: "Magikarp",
-      types: ["water"],
-      number: "129",
-      pokedexIndex: "150"
-    },
-    {
-      name: "Gyarados",
-      types: ["water", "flying"],
-      number: "130",
-      pokedexIndex: "151"
-    },
-    {
-      name: "Mega Gyarados",
-      types: ["water", "dark"],
-      number: "130",
-      pokedexIndex: "152"
-    },
-    {
-      name: "Porygon",
-      types: ["normal"],
-      number: "137",
-      pokedexIndex: "159"
-    },
-    {
-      name: "Omanyte",
-      types: ["rock", "water"],
-      number: "138",
-      pokedexIndex: "160"
-    },
-    {
-      name: "Omastar",
-      types: ["rock", "water"],
-      number: "139",
-      pokedexIndex: "161"
-    },
-    {
-      name: "Kabuto",
-      types: ["rock", "water"],
-      number: "140",
-      pokedexIndex: "162"
-    },
-    {
-      name: "Kabutops",
-      types: ["rock", "water"],
-      number: "141",
-      pokedexIndex: "163"
-    },
-    {
-      name: "Aerodactyl",
-      types: ["rock", "flying"],
-      number: "142",
-      pokedexIndex: "164"
-    },
-    {
-      name: "Mega Aerodactyl",
-      types: ["rock", "flying"],
-      number: "142",
-      pokedexIndex: "165"
-    },
-    {
-      name: "Snorlax",
-      types: ["normal"],
-      number: "143",
-      pokedexIndex: "166"
-    },
-    {
-      name: "Articuno",
-      types: ["ice", "flying"],
-      number: "144",
-      pokedexIndex: "167"
-    },
-    {
-      name: "Zapdos",
-      types: ["electric", "flying"],
-      number: "145",
-      pokedexIndex: "168"
-    },
-    {
-      name: "Moltres",
-      types: ["fire", "flying"],
-      number: "146",
-      pokedexIndex: "169"
-    },
-    {
-      name: "Dratini",
-      types: ["dragon"],
-      number: "147",
-      pokedexIndex: "170"
-    },
-    {
-      name: "Dragonair",
-      types: ["dragon"],
-      number: "148",
-      pokedexIndex: "171"
-    },
-    {
-      name: "Dragonite",
-      types: ["dragon", "flying"],
-      number: "149",
-      pokedexIndex: "172"
-    },
-    {
-      name: "Mewtwo",
-      types: ["psychic"],
-      number: "150",
-      pokedexIndex: "173"
-    },
-    {
-      name: "Mega Mewtwo Y",
-      types: ["psychic"],
-      number: "150",
-      pokedexIndex: "175"
-    },
-    {
-      name: "Mega Mewtwo X",
-      types: ["psychic", "fighting"],
-      number: "150",
-      pokedexIndex: "174"
-    },
-    {
-      name: "Mew",
-      types: ["psychic"],
-      number: "151",
-      pokedexIndex: "176"
-    }
+      number: "2023",
+      pokedexIndex: "18"
+    },    
   ]
 };
 
-// Return the name to find the pokemon image.
+// Devuelve el nombre para encontrar la imagen de Pokémon.
 export function resolveSrcName(name) {
   if (name.indexOf("Mega") > -1) {
     name = name.split(" ").slice(1);

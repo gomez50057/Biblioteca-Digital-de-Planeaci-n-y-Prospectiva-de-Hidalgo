@@ -70,7 +70,7 @@ const App = () => {
         <Header>
           {/* Name input */}
           <Input onKeyUp={e => setFilter({ ...filter, name: e.target.value })} />
-          {/* Fire, Water, Grass... */}
+          {/* Categoria*/}
           <Select
             values={Pokedex.types}
             onChange={e => setFilter({ ...filter, type: e.target.value })}

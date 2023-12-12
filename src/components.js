@@ -1,6 +1,8 @@
 // import { resolveSrcName } from "./utils";
 import React, { useState, useEffect } from "react";
 
+
+
 // Demo component.
 export const Demo = ({ children }) => (
   <section className="grid-demo">
@@ -37,7 +39,7 @@ export const BackgroundHome = ({ children }) => (
     <button className="home-button">
       Más información
     </button>
-    <h2 className="homeh2">"Hoy les puedo decir que en <span>Hidalgo tenemos rumbo y estrategia"</span> </h2>
+    <h2 className="homeh2">"Una educación sólida es clave <span>para el futuro de nuestro estado."</span> </h2>
     <h3 className="homeh3">Julio Menchaca Salazar</h3>
 
     {children}
@@ -134,7 +136,7 @@ export const Featured = ({ children }) => (
 
     <div className="containerSubTi">
       <img src="../img/titulop.png" alt="Descripción de la primera imagen" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
-      <h2 className="subtitulo"> COLECCIONES DESTACADAS</h2>
+      <h2 className="subtitulo"> PUBLICACIONES DESTACADAS</h2>
       <img src="../img/titulop.png" alt="Descripción de la segunda imagen" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
     </div>
     {/* Contenedor de 4 elementos */}
@@ -256,27 +258,19 @@ export const Switch = React.forwardRef(({ children }, ref) => (
 
 // Card content.
 export const CardContent = React.memo(
-  ({ types, name, number, pokedexIndex }) => {
+  ({ types, name, number }) => {
     // const srcName = resolveSrcName(name);
 
     return (
-      <div className="poke-card-container">
+      <div className="book-card-container">
         <div
-          className="poke-card"
+          className="book-card"
           data-pokemon-type={types[0]}
-          id="f727f904-94d9-48e1-ab91-f7e76f1f18f5"
         >
-          <div className="poke-card__image">
-            {/* <img
-              className=""
-              // src={`http://cdn3.bulbagarden.net/uploads/pokemonsunmoon/pokemon_stat/image/${pokedexIndex}/pokedex_${number}${srcName}.png`}
-              src={`https://static.wikia.nocookie.net/espokemon/images/7/77/Pikachu.png/revision/latest/scale-to-width-down/1000?cb=20150621181250`}
-
-              alt={`Pokedex ${number} ${name}`}
-            /> */}
-
+          <div className="book-card__image">
+            <img src="../img/primer.png" alt={`Imagen de ${name}`} />
           </div>
-          <h3 className="poke-card__name">
+          <h3 className="book-card__name">
             <span>{name}</span>
             <svg className="right">
               <use xlinkHref="#icon-rounded-tri-right">
@@ -302,8 +296,8 @@ export const CardContent = React.memo(
               </use>
             </svg>
           </h3>
-          <span className="poke-card__pokedex-number">
-            <span>{`#${number}`}</span>
+          <span className="book-card__pokedex-number">
+            <span>{number}</span>
             <svg className="right">
               <use xlinkHref="#icon-rounded-slim-tri-bottom-right">
                 <svg
@@ -330,16 +324,16 @@ export const CardContent = React.memo(
               </use>
             </svg>
           </span>
-          <ul className="poke-card__types">
+          {/* <ul className="book-card__types">
             {types.map(type => (
               <li
                 key={type}
-                className={"poke-card__types__" + type.toLowerCase()}
+                className={"book-card__types__" + type.toLowerCase()}
               >
                 <span>{type}</span>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     );
