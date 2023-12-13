@@ -258,11 +258,20 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+  /* Para ocultar los elementos fuera del contenedor */
+
 }
 
 .featured .containerFeatured {
   display: flex;
   justify-content: center;
+  perspective: 1000px;
+}
+
+.featured .item {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 
 .featured .item img {
@@ -270,12 +279,22 @@ body {
   height: auto;
   margin: 10px;
   border-radius: 6%;
-  transition: 1.5s;
+  z-index: 20;
+  transition: transform 0.5s, margin 0.5s, filter 0.5s;
+}
+
+.featured .item:hover {
+  transform: scale(1.2) rotateY(0deg);
 }
 
 .featured .item img:hover {
-  transform: scale(1.5);
-  margin: 0 50px 0px 50px;
+  filter: brightness(1.2);
+  /* Ajustar el brillo al pasar el ratón */
+}
+
+.featured .item:not(:hover) {
+  transform: rotateY(60deg);
+  /* Giro de 60 grados para el efecto 3D */
 }
 
 .featuredh2 {
@@ -284,25 +303,33 @@ body {
 
 @media screen and (max-width: 550px) {
   .featured {
-    width: 100vw;
-    height: 90vh;
+    height: 40vh;
+    justify-content: flex-start;
   }
 
-  .featured .containerFeatured {
-    flex-direction: column;
-    align-items: center;
+  .featured .containerSubTi {
+    padding-top: 40px;
   }
 
-  .featured .item img:hover {
-    margin: 50px 50px 50px 50px;
+  .featured .item {
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
   }
 
   .featured .item img {
-    width: 80px;
+    width: 120px;
     height: auto;
-    margin: 10px;
+    margin: 5vh -15px 0 -15px;
+    transition: transform 0.5s, margin 0.5s, filter 0.5s;
   }
 
+  .featured .item:hover {
+    transform: scale(1.2) rotateY(0deg);
+  }
+
+  .featured .item:not(:hover) {
+    transform: rotateY(60deg);
+  }
 }
 
 
@@ -364,13 +391,14 @@ body {
   margin-right: 5px;
 }
 
-.foouterBar{
+.foouterBar {
   position: absolute;
   width: 5px;
   height: 80px;
   margin-left: -10px;
   background: linear-gradient(to left, #BC955B, #BC955B 50%, transparent 50%);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ajusta la opacidad y el tamaño de la sombra según sea necesario */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  /* Ajusta la opacidad y el tamaño de la sombra según sea necesario */
 }
 
 @media screen and (max-width: 550px) {
@@ -384,7 +412,7 @@ body {
     justify-content: center;
   }
 
-  .foouterBar{
+  .foouterBar {
     display: none;
   }
 
@@ -927,6 +955,22 @@ a {
   background: #aaa064;
 }
 
+.book-card[data-pokemon-type="guías"] .book-card__pokedex-year span {
+  color: #aa6464;
+}
+
+.book-card[data-pokemon-type="guías"] .book-card__image {
+  background: #e6bebe;
+}
+
+.book-card[data-pokemon-type="guías"] .book-card__image svg polygon {
+  fill: #d2a0a0;
+}
+
+.book-card .book-card__types__guías {
+  background: #aa6464;
+}
+
 .book-card[data-pokemon-type="atlas"] .book-card__pokedex-year span {
   color: #96aa3c;
 }
@@ -958,6 +1002,8 @@ a {
 .book-card .book-card__types__informe {
   background: #826e96;
 }
+
+
 
 
 /*GridLines*/
@@ -1031,6 +1077,7 @@ a {
   border-radius: 10px;
   background-color: #6F7271;
 }
+
 /*  */
 /* Tooltip */
 /*  */
@@ -1048,12 +1095,12 @@ a {
   border-radius: 4px;
   padding: 4px 8px;
   position: absolute;
-  font-size: 8px;
+  font-size: 12px;
   z-index: 9999;
 
-  bottom: 125%; 
+  bottom: 125%;
   left: 50%;
-  margin-left: -58%; 
+  margin-left: -58%;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -1063,10 +1110,10 @@ a {
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left: -5px; 
+  margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #691B31 transparent transparent transparent; 
+  border-color: #691B31 transparent transparent transparent;
 }
 
 .tooltip-container:hover .tooltip-text {
@@ -1076,10 +1123,11 @@ a {
 }
 
 @media (max-width: 600px) {
-    .tooltip-container:hover .tooltip-text{
+  .tooltip-container:hover .tooltip-text {
     opacity: 0;
   }
 }
+
 /*  */
 /* modal */
 /*  */

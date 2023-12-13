@@ -47,7 +47,7 @@ export const BackgroundHome = ({ children }) => {
         Más información
       </button>
       <h2 className="homeh2">"Una educación sólida es clave <span>para el futuro de nuestro estado."</span> </h2>
-      <h3 className="homeh3">Julio Menchaca Salazar</h3>
+      <h3 className="homeh3">- Julio Menchaca Salazar</h3>
       {forwardRef.current && <AboutUs ref={forwardRef} />}
 
       {children}
@@ -137,12 +137,7 @@ export const AboutUs = forwardRef(({ children }, ref) => {
 
 // Select component.
 export const Featured = ({ children }) => (
-  <section className="featured"
-    style={{
-      backgroundImage: `url(../img/back.png)`,
-    }}
-  >
-
+  <section className="featured" style={{ backgroundImage: `url(../img/back.png)`, }}>
     <div className="containerSubTi">
       <img src="../img/titulop.png" alt="Descripción de la primera imagen" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
       <h2 className="subtitulo"> PUBLICACIONES DESTACADAS</h2>
@@ -154,23 +149,19 @@ export const Featured = ({ children }) => (
       <div className="item">
         <img src="../img/primer.png" alt="Item 1" />
       </div>
-
       {/* Contenedor 2 */}
       <div className="item">
         <img src="../img/primer.png" alt="Item 2" />
       </div>
-
       {/* Contenedor 3 */}
       <div className="item">
         <img src="../img/primer.png" alt="Item 3" />
       </div>
-
       {/* Contenedor 4 */}
       <div className="item">
         <img src="../img/primer.png" alt="Item 4" />
       </div>
     </div>
-
     {children}
   </section>
 );
