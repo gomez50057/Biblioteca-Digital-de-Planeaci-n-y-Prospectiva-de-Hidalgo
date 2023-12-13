@@ -22,9 +22,7 @@ export const Header = ({ children }) => (
   </div>
 );
 
-
-
-// Select component.
+// Home component.
 export const BackgroundHome = ({ children }) => {
   const handleButtonClick = () => {
     const aboutUsElement = document.getElementById('aboutUs');
@@ -55,12 +53,11 @@ export const BackgroundHome = ({ children }) => {
   );
 };
 
-// Select component.
+// aboutUs component.
 export const AboutUs = forwardRef(({ children }, ref) => {
   const [count, setCount] = useState(0);
   const [duration, setDuration] = useState(4000);
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const element = document.querySelector('.AboutUs');
@@ -111,7 +108,6 @@ export const AboutUs = forwardRef(({ children }, ref) => {
       return () => clearInterval(counterInterval);
     }
   }, [isVisible, duration]);
-
   return (
     <section id="aboutUs" ref={ref} className="AboutUs">
       <div className="AboutUsIMG">
@@ -135,7 +131,7 @@ export const AboutUs = forwardRef(({ children }, ref) => {
   );
 });
 
-// Select component.
+// Featured component.
 export const Featured = ({ children }) => (
   <section className="featured" style={{ backgroundImage: `url(../img/back.png)`, }}>
     <div className="containerSubTi">
@@ -166,22 +162,15 @@ export const Featured = ({ children }) => (
   </section>
 );
 
-// Select component.
+// Foouter component.
 export const Foouter = ({ children }) => (
   <section className="foouter"
-    style={{
-      backgroundImage: `url(../img/foouter.png)`,
-    }}
-  >
+    style={{ backgroundImage: `url(../img/foouter.png)`, }}>
     <div className="foouterLogo">
       <img src="../img/LogotipoBlanco.png" alt="Logo" />
     </div>
-
-
-
     <div className="fooutertxt">
       <div className="foouterBar"></div>
-
       <h1>Biblioteca Digital de Planeación</h1>
       <div className="foouterInfo">
         <h2>Unidad de Planeación y Prospectiva</h2>
@@ -190,14 +179,10 @@ export const Foouter = ({ children }) => (
           <p>Plaza Juárez S/N Col. Centro <span>Pachuca de Soto, Hidalgo, México.</span></p>
         </div>
       </div>
-
     </div>
-
     {children}
   </section>
 );
-
-
 
 // Select component.
 export const Select = ({ values, onChange }) => (
@@ -253,7 +238,7 @@ export const Switch = React.forwardRef(({ children }, ref) => (
 ));
 
 
-// Tooltip component.
+// Tooltip component
 const Tooltip = ({ children, text }) => {
   return (
     <div className="tooltip-container">
@@ -263,8 +248,8 @@ const Tooltip = ({ children, text }) => {
   );
 };
 
-// Modal component.
-const Modal = ({children, isOpen, onClose, booksData}) => {
+// Modal component
+const Modal = ({ children, isOpen, onClose, booksData }) => {
   if (!isOpen) {
     return null;
   }
@@ -283,7 +268,17 @@ const Modal = ({children, isOpen, onClose, booksData}) => {
         <a href={pdfSrc} download target="_blank">
           <button>Descargar PDF</button>
         </a>
-        <button onClick={onClose}>Cerrar</button>
+        <div className="close-button" onClick={onClose}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+          </svg>
+        </div>
       </div>
       {children}
     </div>
@@ -293,7 +288,7 @@ const Modal = ({children, isOpen, onClose, booksData}) => {
 
 // Card content.
 export const CardContent = React.memo(
-  ({ types, name, year, descriptionBook, pdfSrc}) => {
+  ({ types, name, year, descriptionBook, pdfSrc }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const truncatedName = name.length > 40 ? `${name.slice(0, 40)}...` : name;

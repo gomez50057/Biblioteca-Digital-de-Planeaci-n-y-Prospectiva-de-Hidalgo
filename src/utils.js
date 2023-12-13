@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-// Return the filter.
+// Return the filter
 export function useFilter(name, type) {
   name = name.toLowerCase();
   type = type.toLowerCase();
@@ -17,7 +17,7 @@ export function useFilter(name, type) {
   );
 }
  
-// The list of pokemons.
+// Lista de libros
 export const datosBibliotecaDigital = {
   cardInfo: ["Categoría ", "Abecedario", "year"],
   types: [
