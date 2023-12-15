@@ -90,7 +90,8 @@ const App = () => {
         {/* Switch */}
         <Switch ref={scrollElemRef}>
           <MuuriComponent
-            dragEnabled
+            // dragEnabled
+            dragFixed
             sort={sort.value}
             sortOptions={sort.options}
             filter={filterFunction}

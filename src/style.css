@@ -38,7 +38,7 @@ body {
   padding-top: 20px;
 }
 
-@media screen and (max-width: 6000px) {
+@media screen and (max-width: 600px) {
   .containerSubTiDoc {
     margin-bottom: 20px;
   }
@@ -1132,6 +1132,7 @@ a {
 /* modal */
 /*  */
 
+
 .modal-overlay {
   position: fixed;
   top: 50%;
@@ -1142,17 +1143,33 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000;
+  z-index: 1000;
+}
+
+.modal-content h2 {
+  color: #691B31;
+}
+
+.modal-content p:first-of-type {
+  text-align: justify;
+}
+
+.modal-content p:last-of-type {
+  text-transform: uppercase;
+
+  margin-bottom: 25px;
 }
 
 .modal-content {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
   padding: 20px;
   border-radius: 20px;
   max-width: 600px;
   width: 100%;
   text-align: center;
-  position: relative; 
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 .close-button {
@@ -1160,4 +1177,82 @@ a {
   top: 10px;
   right: 10px;
   cursor: pointer;
+}
+
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 13px 22px;
+  transition: all 0.3s ease;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: #DDC9A3;
+    width: 46px;
+    height: 46px;
+    transition: width 0.8s ease;
+  }
+
+  span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    color: #111;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+
+    svg {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cta {
+    &:before {
+      display: inline-block;
+      animation: variableWidth 3s infinite;
+    }
+  }
+}
+
+@keyframes variableWidth {
+  0% {
+    width: 46px;
+  }
+
+  50% {
+    width: 70%;
+  }
+
+  100% {
+    width: 46px
+  }
 }

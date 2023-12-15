@@ -265,8 +265,12 @@ const Modal = ({ children, isOpen, onClose, booksData }) => {
         <p>{descriptionBook}</p>
         <p>Año de Publicación: {year}</p>
         <p>Categoría: {types.join(', ')}</p>
-        <a href={pdfSrc} download target="_blank">
-          <button>Descargar PDF</button>
+        <a href={pdfSrc} download target="_blank" className="cta">
+          <span>Descargar PDF</span>
+          <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
         </a>
         <div className="close-button" onClick={onClose}>
           <svg
