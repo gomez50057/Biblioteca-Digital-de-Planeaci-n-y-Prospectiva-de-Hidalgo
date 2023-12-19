@@ -24,6 +24,7 @@ export const Header = ({ children }) => (
 
 // Home component.
 export const BackgroundHome = ({ children }) => {
+  
   const handleButtonClick = () => {
     const aboutUsElement = document.getElementById('aboutUs');
     if (aboutUsElement) {
@@ -34,13 +35,17 @@ export const BackgroundHome = ({ children }) => {
   return (
     <section className="home"
       style={{
-        backgroundImage: `url(../img/BibliotecaDigital.png)`,
+        backgroundImage: `url(../img/homeDigital.png)`,
         paddingLeft: "20px",
       }}
     >
       <div className="logotipo">
         <img src="../img/Logotipo.png" alt="Logo de la empresa" />
       </div>
+      <div className="homeText">
+        <img src="../img/homeText.png" alt="Logo de la empresa" />
+      </div>
+      
       <button className="home-button" onClick={handleButtonClick}>
         Más información
       </button>

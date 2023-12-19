@@ -94,6 +94,14 @@ body {
   height: auto;
 }
 
+.homeText img {
+  position: absolute;
+  top: 50%;
+  right: 2.5vw;
+  width: 50%;
+  height: auto;
+  transform: translateY(-50%);
+}
 
 .home-button {
   background-color: #BC955B;
@@ -119,9 +127,21 @@ body {
 .homeh2 {
   margin: 0;
   font-size: 30px;
+  width: 50vw;
 }
 
 @media screen and (max-width: 550px) {
+
+  .homeText img {
+    position: absolute;
+    top: 30%;
+    right: 2vw;
+
+    width: 90%;
+    height: auto;
+    transform: translateY(-50%);
+  }
+
   .logotipo img {
     width: 360px;
   }
@@ -147,6 +167,10 @@ body {
 
   .homeh3 {
     font-weight: 400;
+  }
+
+  .homeh2 {
+    width: 100vw;
   }
 }
 
