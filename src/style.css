@@ -1,23 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
-/* .body {
-  user-select: none;
-} */
-
 
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   margin: 0;
   padding: 0;
   background: linear-gradient(#F5F3F5, #f5f3f5b2);
-  /*GridLines*/
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -46,8 +37,6 @@ a {
   padding-top: 20px;
 }
 
-
-
 /*  */
 /* home */
 /*  */
@@ -58,7 +47,8 @@ a {
 }
 
 .background-video {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -71,7 +61,7 @@ a {
 .AboutUs {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   width: 100vw;
   height: 100vh;
 }
@@ -82,6 +72,7 @@ a {
   background-position: center;
   width: 100vw;
   height: 150vh;
+  background: linear-gradient(#F5F3F5, #f5f3f5);
 }
 
 .grid-demo .ImgBanda img {
@@ -89,18 +80,9 @@ a {
   top: 0;
   left: 0;
   height: 159vh;
-  width: auto;
-  z-index: -1;
+  width: 41px;
+  z-index: 5;
 }
-
-@media screen and (max-width: 550px) {
-  .grid-demo .ImgBanda img {
-    height: 159vh;
-    width: auto;
-    left: -8vw;
-  }
-}
-
 
 .home {
   display: flex;
@@ -151,55 +133,6 @@ a {
   width: 55vw;
 }
 
-@media screen and (max-width: 550px) {
-  .homeText img {
-    position: absolute;
-    top: 30%;
-    right: 5vw;
-    width: 90%;
-    height: auto;
-    transform: translateY(-50%);
-  }
-
-  .logotipo img {
-    width: 360px;
-  }
-
-  .logotipo img,
-  .home-button {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .logotipo img {
-    top: 15vw;
-  }
-
-  .home-button {
-    width: 60vw;
-    height: 35px;
-    border-radius: 40px;
-    top: 150vw;
-    right: 0;
-
-  }
-
-  .homeh3 {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .homeh2 {
-    font-size: 20px;
-    width: 99vw;
-  }
-}
-
-@media screen and (min-width: 1020px) {
-  .home span {
-    display: block;
-  }
-}
 
 /*  */
 /* About Us */
@@ -208,6 +141,7 @@ a {
 .AboutUs {
   display: flex;
   align-items: center;
+  background: linear-gradient(#F5F3F5, #f5f3f5);
 }
 
 .AboutUsIMG,
@@ -222,7 +156,6 @@ a {
   width: 400px;
   height: auto;
   animation: floatingAnimation 1.8s infinite alternate ease-in-out;
-
 }
 
 @keyframes floatingAnimation {
@@ -253,8 +186,6 @@ a {
   font-weight: 600;
 }
 
-
-
 .contadorlibros p {
   font-size: 50px;
   color: #691B31;
@@ -278,45 +209,17 @@ a {
   align-items: center;
 }
 
-
-@media screen and (max-width: 550px) {
-  .subtitulo {
-    font-size: 16px;
-    margin: 0;
-  }
-
-  .AboutUs {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .AboutUsIMG img {
-    width: 250px;
-  }
-
-  .AboutUstxt {
-    width: 80%;
-  }
-
-  .AboutUstxt p {
-    font-size: 12px;
-  }
-
-  .contadorlibros img {
-    width: 50px;
-  }
-}
-
 /*  */
 /* featured */
 /*  */
 
 .featured {
   background-size: cover;
-  background-position: center;
+  background-position: center;  
+  background-attachment: fixed; 
+  display: flex; 
   width: 100vw;
   height: 63vh;
-  display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -360,12 +263,12 @@ a {
   text-align: center;
 }
 
-
 /*  */
 /* Foouter */
 /*  */
 
 .foouter {
+  position: relative;
   background-size: cover;
   background-position: top;
   width: 100vw;
@@ -374,6 +277,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  z-index: 90;
 }
 
 .foouter .foouterLogo img {
@@ -425,55 +329,6 @@ a {
   margin-left: -10px;
   background: linear-gradient(to left, #BC955B, #BC955B 50%, transparent 50%);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (max-width: 550px) {
-  .foouter {
-    height: 15vh;
-    border-radius: 25px 25px 0px 0px;
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-  }
-
-  .foouterBar {
-    display: none;
-  }
-
-  .fooutertxt {
-    display: flex;
-    align-items: center;
-  }
-
-  .foouterInfo {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-  }
-
-  .foouter .foouterLogo img {
-    width: 350px;
-    height: auto;
-  }
-
-  .fooutertxt h1 {
-    font-size: 10px;
-  }
-
-  .fooutertxt h2,
-  .fooutertxt p {
-    font-size: 8px;
-  }
-
-  .FoouterUbicacion img {
-    width: 10px;
-  }
-
-  .contadorlibros p {
-    font-size: 50px;
-  }
 }
 
 /*  */
@@ -531,7 +386,6 @@ a {
   -o-appearance: none;
   appearance: none;
 }
-
 
 select.form-control {
   padding-right: 40px;
@@ -639,7 +493,6 @@ strong {
 pre {
   white-space: pre-wrap;
 }
-
 
 sub,
 sup {
@@ -881,7 +734,6 @@ input::-moz-focus-inner {
 /* Card Style Type*/
 /*  */
 
-
 .book-card[data-pokemon-type="planes"] .book-card__pokedex-year span {
   color: #DDC9A3;
 }
@@ -1010,11 +862,6 @@ input::-moz-focus-inner {
   background: #98989A;
 }
 
-
-
-
-/*GridLines*/
-
 /*responsive container*/
 .container {
   user-select: none;
@@ -1027,7 +874,6 @@ input::-moz-focus-inner {
   position: relative;
   top: 75px;
 }
-
 
 .main {
   position: absolute;
@@ -1098,7 +944,6 @@ input::-moz-focus-inner {
   position: absolute;
   font-size: 12px;
   z-index: 9999;
-
   bottom: 125%;
   left: 50%;
   margin-left: -58%;
@@ -1122,11 +967,9 @@ input::-moz-focus-inner {
   opacity: 1;
 }
 
-
 /*  */
 /* modal */
 /*  */
-
 
 .modal-overlay {
   position: fixed;
@@ -1173,7 +1016,6 @@ input::-moz-focus-inner {
   right: 10px;
   cursor: pointer;
 }
-
 
 .cta {
   position: relative;
@@ -1289,8 +1131,81 @@ input::-moz-focus-inner {
 }
 
 @media screen and (max-width: 550px) {
-  /* featured */
 
+  .subtitulo {
+    font-size: 16px;
+    margin: 0;
+  } 
+
+  /* Home */
+  .homeText img {
+    position: absolute;
+    top: 30%;
+    right: 5vw;
+    width: 90%;
+    height: auto;
+    transform: translateY(-50%);
+  }
+
+  .logotipo img {
+    width: 360px;
+  }
+
+  .logotipo img,
+  .home-button {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logotipo img {
+    top: 15vw;
+  }
+
+  .home-button {
+    width: 60vw;
+    height: 35px;
+    border-radius: 40px;
+    top: 150vw;
+    right: 0;
+  }
+
+  .homeh3 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .homeh2 {
+    font-size: 20px;
+    width: 99vw;
+  }
+
+  /* AboutUs */
+  .AboutUs {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .AboutUsIMG img {
+    width: 250px;
+  }
+
+  .AboutUstxt {
+    width: 80%;
+  }
+
+  .AboutUstxt p {
+    font-size: 12px;
+  }
+
+  .contadorlibros img {
+    width: 50px;
+  }
+
+  .contadorlibros p {
+    font-size: 50px;
+  }
+
+  /* Featured */
   .featured {
     height: 40vh;
     justify-content: flex-start;
@@ -1318,5 +1233,62 @@ input::-moz-focus-inner {
 
   .featured .item:not(:hover) {
     transform: rotateY(60deg);
+  }
+
+  /* Banner */
+  .grid-demo .ImgBanda img {
+    height: 159vh;
+    width: auto;
+    left: -8vw;
+  }
+
+  /* Foouter */
+  .foouter {
+    height: 15vh;
+    border-radius: 25px 25px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .foouterBar {
+    display: none;
+  }
+
+  .fooutertxt {
+    display: flex;
+    align-items: center;
+  }
+
+  .foouterInfo {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .foouter .foouterLogo img {
+    width: 350px;
+    height: auto;
+  }
+
+  .fooutertxt h1 {
+    font-size: 10px;
+  }
+
+  .fooutertxt h2,
+  .fooutertxt p {
+    font-size: 8px;
+  }
+
+  .FoouterUbicacion img {
+    width: 10px;
+  }
+}
+
+
+@media screen and (min-width: 1020px) {
+  .home span {
+    display: block;
   }
 }

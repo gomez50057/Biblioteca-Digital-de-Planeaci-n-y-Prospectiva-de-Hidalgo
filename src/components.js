@@ -1,6 +1,46 @@
 // import { resolveSrcName } from "./utils";
 import React, { useState, useEffect, forwardRef } from "react";
 
+const TypewriterEffect = ({ text }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const intervalId = setInterval(() => {
+        setDisplayText((prevText) => prevText + text[currentIndex]);
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+      }, 100);
+
+      // Limpiar el intervalo cuando se completa el texto
+      return () => clearInterval(intervalId);
+    }
+  }, [text, currentIndex]);
+
+  // Efecto para hacer parpadear el cursor
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      if (currentIndex < text.length) {
+        setShowCursor((prevShowCursor) => !prevShowCursor);
+      } else {
+        // Si hemos llegado al final del texto, ocultamos el cursor
+        setShowCursor(false);
+      }
+    }, 500);
+
+    // Limpiar el intervalo al desmontar el componente
+    return () => clearInterval(cursorInterval);
+  }, [text, currentIndex]);
+
+  return (
+    <h2 className="homeh2">
+      {displayText}
+      {showCursor && '|'}
+    </h2>
+  );
+};
+
 
 // Home component.
 export const BackgroundHome = ({ children }) => {
@@ -13,7 +53,7 @@ export const BackgroundHome = ({ children }) => {
 
   return (
     <section className="home">
-       <video autoPlay loop muted playsInline className="background-video">
+      <video autoPlay loop muted playsInline className="background-video">
         <source src="../img/homeDigital.mp4" type="video/mp4" />
       </video>
       <div className="logotipo">
@@ -25,8 +65,8 @@ export const BackgroundHome = ({ children }) => {
       <button className="home-button" onClick={handleButtonClick}>
         Más información
       </button>
-      <h2 className="homeh2 wow animate__animated animate__zoomInLeft">"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común." </h2>
-      <h3 className="homeh3 wow animate__animated animate__zoomInRight" data-wow-duration="2s">- Julio Menchaca Salazar</h3>
+      <TypewriterEffect text='"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común."' />
+      <h3 className="homeh3 wow animate__animated animate__zoomInRight" data-wow-duration="13s">- Julio Menchaca Salazar</h3>
       {forwardRef.current && <AboutUs ref={forwardRef} />}
       {children}
     </section>
@@ -89,6 +129,7 @@ export const AboutUs = forwardRef(({ children }, ref) => {
     }
   }, [isVisible, duration]);
   return (
+
     <section id="aboutUs" ref={ref} className="AboutUs">
       <div className="AboutUsIMG wow animate__animated animate__zoomIn" data-wow-offset="350">
         <img src="img/leyendo.png" alt="Persona leyendo nube de palabras" />
