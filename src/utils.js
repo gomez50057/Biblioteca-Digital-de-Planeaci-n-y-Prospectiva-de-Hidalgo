@@ -6,22 +6,22 @@ export function useFilter(name, type) {
   type = type.toLowerCase();
 
   return useCallback(
-    function(data) {
+    function (data) {
       var isSearchMatch = !name
         ? true
         : data.name.toLowerCase().indexOf(name) > -1;
-      var isFilterMatch = type === "all" ? true : data.type.indexOf(type) > -1;
+      var isFilterMatch = type === "todas" ? true : data.type.indexOf(type) > -1;
       return isSearchMatch && isFilterMatch;
     },
     [name, type]
   );
 }
- 
+
 // Lista de libros
 export const datosBibliotecaDigital = {
-  cardInfo: ["Categoría ", "Abecedario", "year"],
+  cardInfo: ["Categoría ", "Abecedario", "Año"],
   types: [
-    "All",
+    "Todas",
     "Planes",
     "Programas",
     "Acuerdos",
@@ -37,7 +37,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo, el cual se elabora de acuerdo a las prioridades del desarrollo integral del Estado fijadas en el Plan Estatal de Desarrollo o de acuerdo a las necesidades del desarrollo vinculadas a dos o más dependencias coordinadoras de sector, así como los que dicte el Poder Ejecutivo del Estado.",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_ESPECIALES/DESPACHO_DEL_GOBERNADOR.pdf",
       "booksIndex": "1"
@@ -47,7 +47,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo, el cual se elabora de acuerdo a las prioridades del desarrollo integral del Estado fijadas en el Plan Estatal de Desarrollo o de acuerdo a las necesidades del desarrollo vinculadas a dos o más dependencias coordinadoras de sector, así como los que dicte el Poder Ejecutivo del Estado.",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_ESPECIALES/Programa_Especial_de_Desarrollo_de_Oficialia_Mayor.pdf",
       "booksIndex": "2"
@@ -57,7 +57,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Programa enfocado a la prioridades de desarrollo integral de la Unidad de Planeación y Prospectiva, fijado en el Plan Estatal de Desarrollo.",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_ESPECIALES/PROGRAMA_ESPECIAL_UPLAPH.pdf",
       "booksIndex": "3"
@@ -67,7 +67,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/SECRETARIA_DE_GOBIERNO.pdf",
       "booksIndex": "4"
@@ -77,7 +77,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarollo_de_Hacienda.pdf",
       "booksIndex": "5"
@@ -87,7 +87,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Bienestar.pdf",
       "booksIndex": "6"
@@ -97,7 +97,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_SIPDUS.pdf",
       "booksIndex": "7"
@@ -107,7 +107,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_Economico_2023-2028.pdf",
       "booksIndex": "8"
@@ -117,7 +117,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_Medio_Ambiente_y_Recursos_Naturales_2023-2028_.pdf",
       "booksIndex": "9"
@@ -127,7 +127,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Agricultura.pdf",
       "booksIndex": "10"
@@ -137,7 +137,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Turismo_Sostenible.pdf",
       "booksIndex": "11"
@@ -147,7 +147,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Contraloria.pdf",
       "booksIndex": "12"
@@ -157,7 +157,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Educacion.pdf",
       "booksIndex": "13"
@@ -167,7 +167,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Salud.pdf",
       "booksIndex": "14"
@@ -177,7 +177,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Seguridad_Publica.pdf",
       "booksIndex": "15"
@@ -187,7 +187,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_del_Trabajo_y_la_Prevision_Social.pdf",
       "booksIndex": "16"
@@ -197,7 +197,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_SEMOT.pdf ",
       "booksIndex": "17"
@@ -207,7 +207,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_SECTORIALES/Programa_Sectorial_de_Desarrollo_de_Cultura_2023-2028.pdf",
       "booksIndex": "18"
@@ -217,7 +217,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento de planeación de mediano plazo, el cual se elabora de acuerdo a las prioridades del desarrollo integral del Estado fijadas en el Plan Estatal de Desarrollo o de acuerdo a las necesidades del desarrollo vinculadas a dos o más dependencias coordinadoras de sector, así como los que dicte el Poder Ejecutivo del Estado.",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PROGRAMAS_ESPECIALES/Programa_Especial_de_Desarrollo_de_Procuracion_de_Justicia.pdf",
       "booksIndex": "19"
@@ -227,7 +227,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Documento rector de la planeación del Estado, en cual se establecen las directrices generales de política pública, las de carácter estratégico y la prospectiva que determinan la conducción del desarrollo integral de la entidad, tomando en consideración los propósitos y metas de la Planeación Nacional del Desarrollo.",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/PLAN%20ESTATAL.pdf",
       "booksIndex": "20"
@@ -237,7 +237,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "guías"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Documento técnico que especifica la metodología a seguir para la realización de los Programas Sectoriales y Especiales de Desarrollo por parte de las Dependencias de la Administración Pública Estatal. ",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/Metodologi%C3%ACa_Programas_Sectoriales_y_Especiales_GUI%C3%ACA_RA%C3%ACPIDA_ver2.pdf",
       "booksIndex": "21"
@@ -247,7 +247,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "guías"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Documento técnico que especifica la metodología a seguir para la realización de la actualización de los Planes Municipales de Desarrollo por parte de los municipios del Estado.",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/guia-rapida-lineamientos.pdf",
       "booksIndex": "22"
@@ -257,7 +257,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "guías"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Documento técnico que especifica la metodología a seguir para la realización de los Programas Institucionales de Desarrollo por parte de los Organismos Públicos Descentralizados.",
       "pdfSrc": "http://tenemosunacuerdo.hidalgo.gob.mx/pdf/2.-Guia-metodologica-para-la-elaboracion-de-los-PID.pptx.pdf",
       "booksIndex": "23"
@@ -267,7 +267,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Acatlan2020-2024.pdf",
       "booksIndex": "24"
@@ -277,7 +277,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://acaxochitlanhgo.gob.mx/wp-content/uploads/2022/08/Plan-Municipal-de-Desarrollo-2021-2022_Acaxochitlan.pdf",
       "booksIndex": "25"
@@ -287,7 +287,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Actopan2020-2024.pdf",
       "booksIndex": "26"
@@ -297,7 +297,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_AguaBlancadeITurbide2020-2024.pdf",
       "booksIndex": "27"
@@ -307,7 +307,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Ajacuba2020-2024.pdf",
       "booksIndex": "28"
@@ -317,7 +317,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://alfajayucan.hidalgo.gob.mx/documentos/Plan%20Municipal%20de%20Desarrollo%202020-2024.pdf",
       "booksIndex": "29"
@@ -327,7 +327,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://almoloya.hidalgo.gob.mx/descargables/transparencia/2dotrim21/obras/PMD.pdf",
       "booksIndex": "30"
@@ -337,7 +337,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://www.apan.gob.mx/descargables/transparencia_proactiva/Plan%20Municipal%20de%20Desarrollo.pdf",
       "booksIndex": "31"
@@ -347,7 +347,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_ElArenal2020-2024.pdf",
       "booksIndex": "32"
@@ -357,7 +357,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://www.atitalaquia.gob.mx/plan-municipal/plan-2020-2024.pdf",
       "booksIndex": "33"
@@ -367,7 +367,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://drive.google.com/file/d/1hxV3cWzzwFyvE0WuZ_2gy9WK7n_Ldma4/view",
       "booksIndex": "34"
@@ -377,7 +377,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://www.atotonilcoelgrande.gob.mx/wp-content/uploads/2021/06/Plan-Municipal-de-Desarrollo-Atotonilco-el-Grande-2020-2024-1-1.pdf",
       "booksIndex": "35"
@@ -387,7 +387,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://www.atotonilcodetula.gob.mx/wp-content/uploads/2021/08/3-PLAN_DE_DESARROLLO_MUNICIPAL_ATOTONILCO_-DE_TULA_2020-2024-3-1.pdf",
       "booksIndex": "36"
@@ -397,7 +397,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Calnali2020-2024.pdf",
       "booksIndex": "37"
@@ -407,7 +407,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_ElCardonal2020-2024.pdf",
       "booksIndex": "38"
@@ -417,7 +417,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_CuautepecdeHinojosa2020-2024.pdf",
       "booksIndex": "39"
@@ -427,7 +427,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://www.chapantongo.gob.mx/descargables/planeacion_y_capacitacion/2021/PDM2020-2024.pdf",
       "booksIndex": "40"
@@ -437,7 +437,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Chapulhu%C3%A1can2020-2024.pdf",
       "booksIndex": "41"
@@ -447,7 +447,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Chilcuautla2020-2024.pdf",
       "booksIndex": "42"
@@ -457,7 +457,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Eloxochitlan2020-2024.pdf",
       "booksIndex": "43"
@@ -467,7 +467,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_EmilianoZapata2020-2024.pdf",
       "booksIndex": "44"
@@ -477,7 +477,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Epazoyucan2020-2024.pdf",
       "booksIndex": "45"
@@ -487,7 +487,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_FranciscoIMadero2020-2024.pdf",
       "booksIndex": "46"
@@ -497,7 +497,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_HuascadeOcampo2020-2024.pdf",
       "booksIndex": "47"
@@ -507,7 +507,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Huautla2020-2024.pdf",
       "booksIndex": "48"
@@ -517,7 +517,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Huazalingo2020-2024.pdf",
       "booksIndex": "49"
@@ -527,7 +527,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Huehuetla2020-2024.pdf",
       "booksIndex": "50"
@@ -537,7 +537,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_HuejutladeReyes2020-2024.pdf",
       "booksIndex": "51"
@@ -547,7 +547,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Huichapan2020-2024.pdf",
       "booksIndex": "52"
@@ -557,7 +557,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Ixmiquilpan2022-2024.pdf",
       "booksIndex": "53"
@@ -567,7 +567,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Jacala2020-2024.pdf",
       "booksIndex": "54"
@@ -577,7 +577,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Jaltocan2020-2024.pdf",
       "booksIndex": "55"
@@ -587,7 +587,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_JuarezHidalgo2020-2024.pdf",
       "booksIndex": "56"
@@ -597,7 +597,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Lolotla2020-2024.pdf",
       "booksIndex": "57"
@@ -607,7 +607,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Metepec2020-2024.pdf",
       "booksIndex": "58"
@@ -617,7 +617,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_SanAgustinMetzquititlan2020-2024.pdf",
       "booksIndex": "59"
@@ -627,7 +627,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Meztitlan2020-2024.pdf",
       "booksIndex": "60"
@@ -637,7 +637,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_MineraldelChico2020-2024.pdf",
       "booksIndex": "61"
@@ -647,7 +647,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_MineraldelMonte2020-2024.pdf",
       "booksIndex": "62"
@@ -657,7 +657,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_LaMision2020-2024.pdf",
       "booksIndex": "63"
@@ -667,7 +667,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_MixquiahualadeJuarez2020-2024.pdf",
       "booksIndex": "64"
@@ -677,7 +677,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_MolangodeEscamilla2020-2024.pdf",
       "booksIndex": "65"
@@ -687,7 +687,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_NicolasFlores2020-2024.pdf",
       "booksIndex": "66"
@@ -697,7 +697,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_NopaladeVillagran2020-2024.pdf",
       "booksIndex": "67"
@@ -707,7 +707,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_OmitlandeJuarez2020-2024.pdf",
       "booksIndex": "68"
@@ -717,7 +717,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_SanFelipeOrizatlan2020-2024.pdf",
       "booksIndex": "69"
@@ -727,7 +727,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Pacula2020-2024.pdf",
       "booksIndex": "70"
@@ -737,7 +737,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=Periodico-Oficial-Alcance-5-del-15-de-junio-de-2021",
       "booksIndex": "71"
@@ -747,7 +747,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Pisaflores2020-2024.pdf",
       "booksIndex": "72"
@@ -757,7 +757,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_ProgresodeObregon2020-2024.pdf",
       "booksIndex": "73"
@@ -767,7 +767,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-12-de-enero-de-2022",
       "booksIndex": "74"
@@ -777,7 +777,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_SanAgustinTlaxiaca2020-2024.pdf",
       "booksIndex": "75"
@@ -787,7 +787,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_SanBartolotutotepec2020-2024.pdf",
       "booksIndex": "76"
@@ -797,7 +797,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_SanSalvador2020-2024.pdf",
       "booksIndex": "77"
@@ -807,7 +807,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_SantiagodeAnaya2020-2024.pdf",
       "booksIndex": "78"
@@ -817,7 +817,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_SantiagoTulantepec2020-2024.pdf",
       "booksIndex": "79"
@@ -827,7 +827,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Singuilucan2020-2024.pdf",
       "booksIndex": "80"
@@ -837,7 +837,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tasquillo2020-2024.pdf",
       "booksIndex": "81"
@@ -847,7 +847,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tecozautla2020-2024.pdf",
       "booksIndex": "82"
@@ -857,7 +857,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_TenangodeDoria2020-2024.pdf",
       "booksIndex": "83"
@@ -867,7 +867,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tepeapulco2020-2024.pdf",
       "booksIndex": "84"
@@ -877,7 +877,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_TepehuacandeGuerrero2020-2024.pdf",
       "booksIndex": "85"
@@ -887,7 +887,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-3-del-06-de-julio-de-2021",
       "booksIndex": "86"
@@ -897,7 +897,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tepetitlan2020-2024.pdf",
       "booksIndex": "87"
@@ -907,7 +907,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tetepango2020-2024.pdf",
       "booksIndex": "88"
@@ -917,7 +917,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_VilladeTenzontepec2020-2024.pdf",
       "booksIndex": "89"
@@ -927,7 +927,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tezontepec_de_Aldama2020-2024.pdf",
       "booksIndex": "90"
@@ -937,7 +937,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tianguistengo2020-2024.pdf",
       "booksIndex": "91"
@@ -947,7 +947,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tizayuca2020-2024.pdf",
       "booksIndex": "92"
@@ -957,7 +957,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tlahuelilpan2020-2024.pdf",
       "booksIndex": "93"
@@ -967,7 +967,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tlahuiltepa2020-2024.pdf",
       "booksIndex": "94"
@@ -977,7 +977,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tlanalapa2020-2024.pdf",
       "booksIndex": "95"
@@ -987,7 +987,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tlanchinol2020-2024.pdf",
       "booksIndex": "96"
@@ -997,7 +997,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tlaxcoapan2020-2024.pdf",
       "booksIndex": "97"
@@ -1007,7 +1007,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tolcayuca2020-2024.pdf",
       "booksIndex": "98"
@@ -1017,7 +1017,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_TuladeAllende2020-2024.pdf",
       "booksIndex": "99"
@@ -1027,7 +1027,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Tulancingo2020-2024.pdf",
       "booksIndex": "100"
@@ -1037,7 +1037,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Xochiatipan2020-2024.pdf",
       "booksIndex": "101"
@@ -1047,7 +1047,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Xochicoatlan2020-2024.pdf",
       "booksIndex": "102"
@@ -1057,7 +1057,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Yahualica2020-2024.pdf",
       "booksIndex": "103"
@@ -1067,7 +1067,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Zacualtipan2020-2024.pdf",
       "booksIndex": "104"
@@ -1077,7 +1077,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_ZapotlandeJuarez2020-2024.pdf",
       "booksIndex": "105"
@@ -1087,7 +1087,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Zempoala2020-2024.pdf",
       "booksIndex": "106"
@@ -1097,7 +1097,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "planes"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Documento rector de la planeación en el municipio, el cual comprende el conjunto de la actividad económica, social y ambiental del Municipio, y es la guía de los programasque se generen en el Sistema Municipal de Planeación Democrática y que observará congruencia con los lineamientos señalados por el Plan Nacional de Desarrollo, el Plan Estatal de Desarrollo y el Programa Regional correspondiente.",
       "pdfSrc": "http://planestataldedesarrollo.hidalgo.gob.mx/pdf/PMD/2020-2024/PMD_Zimapan2020-2024.pdf",
       "booksIndex": "107"
@@ -1107,7 +1107,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=Periodico-Oficial-Alcance-2-del-06-de-diciembre-de-2022#",
       "booksIndex": "108"
@@ -1117,7 +1117,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-09-de-septiembre-de-2013",
       "booksIndex": "109"
@@ -1127,7 +1127,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2011",
+      "año": "2011",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-bis-0-del-14-de-noviembre-de-2011",
       "booksIndex": "110"
@@ -1137,7 +1137,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-17-de-octubre-de-2022",
       "booksIndex": "111"
@@ -1147,7 +1147,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=Periodico-Oficial-Alcance-1-del-01-de-mayo-de-2023",
       "booksIndex": "112"
@@ -1157,7 +1157,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-09-de-septiembre-de-2013",
       "booksIndex": "113"
@@ -1167,7 +1167,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2016",
+      "año": "2016",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-27-de-junio-de-2016",
       "booksIndex": "114"
@@ -1177,7 +1177,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-1-del-21-de-noviembre-de-2022",
       "booksIndex": "115"
@@ -1187,7 +1187,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-4-del-01-de-septiembre-de-2022",
       "booksIndex": "116"
@@ -1197,7 +1197,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-1-del-09-de-septiembre-de-2013",
       "booksIndex": "117"
@@ -1207,7 +1207,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-1-del-09-de-septiembre-de-2013",
       "booksIndex": "118"
@@ -1217,7 +1217,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-1-del-09-de-septiembre-de-2013",
       "booksIndex": "119"
@@ -1227,7 +1227,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-1-del-28-de-noviembre-de-2022",
       "booksIndex": "120"
@@ -1237,7 +1237,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-09-de-septiembre-de-2013",
       "booksIndex": "121"
@@ -1247,7 +1247,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-30-de-agosto-de-2022",
       "booksIndex": "122"
@@ -1257,7 +1257,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-20-de-diciembre-de-2022",
       "booksIndex": "123"
@@ -1267,7 +1267,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-0-del-20-de-junio-de-2022",
       "booksIndex": "124"
@@ -1277,7 +1277,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2016",
+      "año": "2016",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-ordinario-0-del-18-de-enero-de-2016",
       "booksIndex": "125"
@@ -1287,7 +1287,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "programas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento técnico juridico, mediante el cual se establecen políticas, acciones y estrategias en beneficio de la utilización del suelo, dado que integra un inventario del territorio, con la finalidad de identificar las vocaciones del suelo y con ello implementar políticas que  garanticen  una correcta administración del suelo, asimismo define una cartera de proyectos estratégicos que permitirán atender las necesidades del municipio.",
       "pdfSrc": "https://periodico.hidalgo.gob.mx/?tribe_events=periodico-oficial-alcance-6-del-02-de-septiembre-de-2022",
       "booksIndex": "126"
@@ -1297,7 +1297,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "informe"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Documento que ofrece un balance del estado general que guarda la Administración Pública Estatal, así como, las acciones emprendidas en el primer año de gestión.",
       "pdfSrc": "https://primerinforme.hidalgo.gob.mx/assets/pdf/primer-informe-hidalgo-menchaca.pdf",
       "booksIndex": "127"
@@ -1307,7 +1307,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2013/13003_ACTOPAN_2013.PDF",
       "booksIndex": "128"
@@ -1317,7 +1317,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2015",
+      "año": "2015",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2015/13007_ALMOLOYA_2015.PDF",
       "booksIndex": "129"
@@ -1327,7 +1327,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13009_EL_ARENAL_2020.pdf",
       "booksIndex": "130"
@@ -1337,7 +1337,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13010_ATITALAQUIA_2020.PDF",
       "booksIndex": "131"
@@ -1347,7 +1347,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2015",
+      "año": "2015",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2015/13012_ATOTONILCO_EL_GRANDE_2015.PDF",
       "booksIndex": "132"
@@ -1357,7 +1357,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2012",
+      "año": "2012",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2012/13016_CUAUTEPEC_HINOJOSA_2012.PDF",
       "booksIndex": "133"
@@ -1367,7 +1367,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2016",
+      "año": "2016",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2016/13019_CHILCUAUTLA_HGO_2016.PDF",
       "booksIndex": "134"
@@ -1377,7 +1377,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2015",
+      "año": "2015",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2015/13024_HUASCA_DE_OCAMPO_2015.PDF",
       "booksIndex": "135"
@@ -1387,7 +1387,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13027_HUEHUETLA_2020.PDF",
       "booksIndex": "136"
@@ -1397,7 +1397,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2013/13028_HUEJUTLA_REYES_2013.PDF",
       "booksIndex": "137"
@@ -1407,7 +1407,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2022/13048_PACHUCA_2022.pdf",
       "booksIndex": "138"
@@ -1417,7 +1417,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2018",
+      "año": "2018",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2018/13051_MINERAL_DE_LA_REFORMA_2018.PDF",
       "booksIndex": "139"
@@ -1427,7 +1427,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2014",
+      "año": "2014",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2014/13052_SAN_AGUSTIN_TLAXIACA_2014.pdf",
       "booksIndex": "140"
@@ -1437,7 +1437,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2013/13060_TENANGO_DORIA_2013.PDF",
       "booksIndex": "141"
@@ -1447,7 +1447,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2022",
+      "año": "2022",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2022/13062_TEPEHUACAN_GUERRERO_2022.pdf",
       "booksIndex": "142"
@@ -1457,7 +1457,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2023/13063_TEPEJI_RIO_2023.pdf",
       "booksIndex": "143"
@@ -1467,7 +1467,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13064_TEPETITLAN_2020.PDF",
       "booksIndex": "144"
@@ -1477,7 +1477,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2023/13065_TETEPANGO_2023.pdf",
       "booksIndex": "145"
@@ -1487,7 +1487,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2013",
+      "año": "2013",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2013/13066_VILLA_TEZONTEPEC_2013.PDF",
       "booksIndex": "146"
@@ -1497,7 +1497,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2014",
+      "año": "2014",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2014/13067_TEZONTEPEC_DE_ALDAMA_2014.PDF",
       "booksIndex": "147"
@@ -1507,7 +1507,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13069_TIZAYUCA_2020.PDF",
       "booksIndex": "148"
@@ -1517,7 +1517,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13070_TLAHUELILPAN_2020.PDF",
       "booksIndex": "149"
@@ -1527,7 +1527,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13073_TLANCHINOL_2020.pdf",
       "booksIndex": "150"
@@ -1537,7 +1537,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2011",
+      "año": "2011",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2011/13074_TLAXCOAPAN_2011.PDF",
       "booksIndex": "151"
@@ -1547,7 +1547,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2023",
+      "año": "2023",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2023/13076_TULA_ALLENDE_2023.pdf",
       "booksIndex": "152"
@@ -1557,7 +1557,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2017",
+      "año": "2017",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2017/13077_TULANCINGO_HGO_2017.PDF",
       "booksIndex": "153"
@@ -1567,7 +1567,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2020",
+      "año": "2020",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2020/13078_XOCHIATIPAN_2020.PDF",
       "booksIndex": "154"
@@ -1577,7 +1577,7 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2014",
+      "año": "2014",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2014/13082_ZAPOTLAN_DE_JUAREZ_2014.PDF",
       "booksIndex": "155"
@@ -1587,12 +1587,11 @@ export const datosBibliotecaDigital = {
       "types": [
         "atlas"
       ],
-      "year": "2016",
+      "año": "2016",
       "descriptionBook": "Instrumento para entender los peligros del municipio, facilitando la planeación del desarrollo seguro y tomando decisiones informadas para reducir riesgos de desastres y proteger comunidades e infraestructuras.",
       "pdfSrc": "http://rmgir.proyectomesoamerica.org/AtlasMunPDF/2016/13084_ZIMAPAN_HGO_2016.PDF",
       "booksIndex": "156"
     }
   ]
 };
-
 

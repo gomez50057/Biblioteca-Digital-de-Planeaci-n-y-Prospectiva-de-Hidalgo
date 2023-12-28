@@ -1,30 +1,9 @@
 // import { resolveSrcName } from "./utils";
 import React, { useState, useEffect, forwardRef } from "react";
-// Demo component.
-export const Demo = ({ children }) => (
-  <section className="grid-demo">
-    <div className="ImgBanda" >
-      <img src="../img/banda.png" alt="Descripción de la imagen" />
-    </div>
-    {children}
-  </section>
-);
 
-// Header component.
-export const Header = ({ children }) => (
-  <div className="controls">
-    <div className="containerSubTiDoc">
-      <img src="../img/titulop.png" alt="Descripción de la primera imagen" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
-      <h2 className="subtitulo">DOCUMENTOS</h2>
-      <img src="../img/titulop.png" alt="Descripción de la segunda imagen" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
-    </div>
-    {children}
-  </div>
-);
 
 // Home component.
 export const BackgroundHome = ({ children }) => {
-  
   const handleButtonClick = () => {
     const aboutUsElement = document.getElementById('aboutUs');
     if (aboutUsElement) {
@@ -33,26 +12,22 @@ export const BackgroundHome = ({ children }) => {
   };
 
   return (
-    <section className="home"
-      style={{
-        backgroundImage: `url(../img/homeDigital.png)`,
-        paddingLeft: "20px",
-      }}
-    >
+    <section className="home">
+       <video autoPlay loop muted playsInline className="background-video">
+        <source src="../img/homeDigital.mp4" type="video/mp4" />
+      </video>
       <div className="logotipo">
-        <img src="../img/Logotipo.png" alt="Logo de la empresa" />
+        <img src="../img/Logotipo.png" alt="Logo de la Unidad Planeación" />
       </div>
       <div className="homeText">
-        <img src="../img/homeText.png" alt="Logo de la empresa" />
+        <img src="../img/homeText.png" alt="Logo de Biblioteca Digital de Planeación" />
       </div>
-      
       <button className="home-button" onClick={handleButtonClick}>
         Más información
       </button>
-      <h2 className="homeh2">"Una educación sólida es clave <span>para el futuro de nuestro estado."</span> </h2>
-      <h3 className="homeh3">- Julio Menchaca Salazar</h3>
+      <h2 className="homeh2 wow animate__animated animate__zoomInLeft">"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común." </h2>
+      <h3 className="homeh3 wow animate__animated animate__zoomInRight" data-wow-duration="2s">- Julio Menchaca Salazar</h3>
       {forwardRef.current && <AboutUs ref={forwardRef} />}
-
       {children}
     </section>
   );
@@ -92,12 +67,12 @@ export const AboutUs = forwardRef(({ children }, ref) => {
 
   useEffect(() => {
     if (isVisible) {
-      const targetCount = 600;
+      const targetCount = 156;
       const interval = duration / targetCount;
 
       const counterInterval = setInterval(() => {
         setCount((prevCount) => {
-          if (prevCount < 300) {
+          if (prevCount < 70) {
             // Primeros xx números, contar rápidamente
             return prevCount + 10;
           } else if (prevCount < targetCount) {
@@ -115,20 +90,18 @@ export const AboutUs = forwardRef(({ children }, ref) => {
   }, [isVisible, duration]);
   return (
     <section id="aboutUs" ref={ref} className="AboutUs">
-      <div className="AboutUsIMG">
-        <img src="../img/libro.png" alt="Logo de la empresa" />
+      <div className="AboutUsIMG wow animate__animated animate__zoomIn" data-wow-offset="350">
+        <img src="img/leyendo.png" alt="Persona leyendo nube de palabras" />
       </div>
       <div className="AboutUstxt">
-        <p className="homeh3">Bienvenido a la Biblioteca Digital de Planeación, herramienta pública para el almacenamiento y consulta de los documentos, programas, planes, informes, estudios, artículos, análisis, guías y demás instrumentos en los que participa la Unidad de Planeación y Prospectiva del Gobierno del Estado de Hidalgo.
+        <p className="homeh3 wow animate__animated animate__fadeInRightBig" data-wow-offset="350"><span>Bienvenido a la Biblioteca Digital de Planeación</span>, herramienta pública para el almacenamiento y consulta de los documentos, programas, planes, informes, estudios, artículos, análisis, guías y demás instrumentos en los que participa la Unidad de Planeación y Prospectiva del Gobierno del Estado de Hidalgo.
         </p>
-        <p>Este espacio virtual tiene como objetivo ser una herramienta útil para la población, en donde de manera ágil y sencilla pueden consultar y descargar los materiales que les resulten útiles.
+        <p className="wow animate__animated animate__fadeInRightBig" data-wow-offset="350">Este espacio virtual tiene como objetivo ser una herramienta útil para la población, en donde de manera ágil y sencilla pueden consultar y descargar los materiales que les resulten útiles.
         </p>
-        <p>Con la Biblioteca Digital de Planeación, contribuimos a llevar a Hidalgo a su máximo potencial.
-        </p>
-        <div className="contadorlibros">
-          <p>{count}</p>
-          <p>Total de publicaciones</p>
-          <img src="../img/librosTotal.png" alt="Logo de la empresa" />
+        <p className="wow animate__animated animate__fadeInRightBig" data-wow-offset="250"><span>Con la Biblioteca Digital de Planeación, contribuimos a llevar a Hidalgo a su máximo potencial.</span>    </p>
+        <div className="contadorlibros wow animate__animated animate__zoomInUp" data-wow-offset="250">
+          <img src="img/librosTotal.png" alt="Icono de libro digital" />
+          <p>{count} <span>Publicaciones</span></p>
         </div>
       </div>
       {children}
@@ -136,57 +109,58 @@ export const AboutUs = forwardRef(({ children }, ref) => {
   );
 });
 
+
 // Featured component.
 export const Featured = ({ children }) => (
-  <section className="featured" style={{ backgroundImage: `url(../img/back.png)`, }}>
-    <div className="containerSubTi">
-      <img src="../img/titulop.png" alt="Descripción de la primera imagen" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
-      <h2 className="subtitulo"> PUBLICACIONES DESTACADAS</h2>
-      <img src="../img/titulop.png" alt="Descripción de la segunda imagen" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
+  <section className="featured" style={{ backgroundImage: `url(..//img/back.png)`, }}>
+    <div className="containerSubTi wow animate__animated animate__fadeInBottomLeft" data-wow-offset="250">
+      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
+      <h2 className="subtitulo">DESTACADAS</h2>
+      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
     </div>
     {/* Contenedor de 4 elementos */}
     <div className="containerFeatured">
       {/* Contenedor 1 */}
       <div className="item">
-        <img src="../img/primer.png" alt="Item 1" />
+        <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 1" />
       </div>
       {/* Contenedor 2 */}
       <div className="item">
-        <img src="../img/primer.png" alt="Item 2" />
+        <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 2" />
       </div>
       {/* Contenedor 3 */}
       <div className="item">
-        <img src="../img/primer.png" alt="Item 3" />
+        <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 3" />
       </div>
       {/* Contenedor 4 */}
       <div className="item">
-        <img src="../img/primer.png" alt="Item 4" />
+        <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 4" />
       </div>
     </div>
     {children}
   </section>
 );
 
-// Foouter component.
-export const Foouter = ({ children }) => (
-  <section className="foouter"
-    style={{ backgroundImage: `url(../img/foouter.png)`, }}>
-    <div className="foouterLogo">
-      <img src="../img/LogotipoBlanco.png" alt="Logo" />
-    </div>
-    <div className="fooutertxt">
-      <div className="foouterBar"></div>
-      <h1>Biblioteca Digital de Planeación</h1>
-      <div className="foouterInfo">
-        <h2>Unidad de Planeación y Prospectiva</h2>
-        <div className="FoouterUbicacion">
-          <img src="../img/ubicacion.png" alt="Logo" />
-          <p>Plaza Juárez S/N Col. Centro <span>Pachuca de Soto, Hidalgo, México.</span></p>
-        </div>
-      </div>
+// Demo component.
+export const Demo = ({ children }) => (
+  <section className="grid-demo">
+    <div className="ImgBanda" >
+      <img src="../img/banda.png" alt="Banda con glifos de Hidalgo" />
     </div>
     {children}
   </section>
+);
+
+// Documents component.
+export const Documents = ({ children }) => (
+  <div className="documents">
+    <div className="containerSubTiDoc wow animate__animated animate__fadeInBottomRight">
+      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
+      <h2 className="subtitulo">DOCUMENTOS</h2>
+      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
+    </div>
+    {children}
+  </div>
 );
 
 // Select component.
@@ -260,7 +234,7 @@ const Modal = ({ children, isOpen, onClose, booksData }) => {
   }
   // const { types, name, year, description, descriptionBook, imgSrc } = booksData;
 
-  const { types, name, year, descriptionBook, pdfSrc } = booksData;
+  const { types, name, año, descriptionBook, pdfSrc } = booksData;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -268,7 +242,7 @@ const Modal = ({ children, isOpen, onClose, booksData }) => {
         {/* <img src={imgSrc} alt={`Imagen de ${name}`} /> */}
         <h2>{name}</h2>
         <p>{descriptionBook}</p>
-        <p>Año de Publicación: {year}</p>
+        <p>Año de Publicación: {año}</p>
         <p>Categoría: {types.join(', ')}</p>
         <a href={pdfSrc} download target="_blank" className="cta">
           <span>Descargar PDF</span>
@@ -297,7 +271,7 @@ const Modal = ({ children, isOpen, onClose, booksData }) => {
 
 // Card content.
 export const CardContent = React.memo(
-  ({ types, name, year, descriptionBook, pdfSrc }) => {
+  ({ types, name, año, descriptionBook, pdfSrc }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const truncatedName = name.length > 40 ? `${name.slice(0, 40)}...` : name;
@@ -305,7 +279,7 @@ export const CardContent = React.memo(
     const booksData = {
       types,
       name,
-      year,
+      año,
       descriptionBook,
       pdfSrc,
     };
@@ -345,7 +319,7 @@ export const CardContent = React.memo(
             </h3></Tooltip>
 
             <span className="book-card__pokedex-year">
-              <span>{year}</span>
+              <span>{año}</span>
               <svg className="right">
                 <use xlinkHref="#icon-rounded-slim-tri-bottom-right">
                   <svg
@@ -393,3 +367,24 @@ export const CardContent = React.memo(
   }
 );
 
+// Foouter component.
+export const Foouter = ({ children }) => (
+  <section className="foouter"
+    style={{ backgroundImage: `url(../img/foouter.png)`, }}>
+    <div className="foouterLogo">
+      <img src="../img/LogotipoBlanco.png" alt="Logo de la Unidad Planeación en blanco" />
+    </div>
+    <div className="fooutertxt">
+      <div className="foouterBar"></div>
+      <h1>Biblioteca Digital de Planeación</h1>
+      <div className="foouterInfo">
+        <h2>Unidad de Planeación y Prospectiva</h2>
+        <div className="FoouterUbicacion">
+          <img src="../img/ubicacion.png" alt="Icono de ubicación" />
+          <p>Plaza Juárez S/N Col. Centro <span>Pachuca de Soto, Hidalgo, México.</span></p>
+        </div>
+      </div>
+    </div>
+    {children}
+  </section>
+);
