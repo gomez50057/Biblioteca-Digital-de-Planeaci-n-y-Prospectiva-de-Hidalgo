@@ -38,7 +38,7 @@ a {
 }
 
 /*  */
-/* home */
+/* Home */
 /*  */
 
 .home {
@@ -133,7 +133,6 @@ a {
   width: 55vw;
 }
 
-
 /*  */
 /* About Us */
 /*  */
@@ -165,7 +164,7 @@ a {
   }
   
   100% {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
     filter: drop-shadow(0 10px 20px rgba(184, 175, 175, 0.2));
   }
 }
@@ -210,7 +209,7 @@ a {
 }
 
 /*  */
-/* featured */
+/* Featured */
 /*  */
 
 .featured {
@@ -311,12 +310,12 @@ a {
   font-weight: 300;
 }
 
-.FoouterUbicacion {
+.foouterUbicacion {
   display: flex;
   align-items: center;
 }
 
-.FoouterUbicacion img {
+.foouterUbicacion img {
   width: 20px;
   height: auto;
   margin-right: 5px;
@@ -332,7 +331,7 @@ a {
 }
 
 /*  */
-/* documents */
+/* Documents */
 /*  */
 
 .documents {
@@ -862,7 +861,7 @@ input::-moz-focus-inner {
   background: #98989A;
 }
 
-/*responsive container*/
+/*Responsive Container*/
 .container {
   user-select: none;
   width: 100vw;
@@ -928,6 +927,7 @@ input::-moz-focus-inner {
 /*  */
 /* Tooltip */
 /*  */
+
 .tooltip-container {
   position: relative;
   display: inline-block;
@@ -968,7 +968,7 @@ input::-moz-focus-inner {
 }
 
 /*  */
-/* modal */
+/* Modal */
 /*  */
 
 .modal-overlay {
@@ -994,7 +994,6 @@ input::-moz-focus-inner {
 
 .modal-content p:last-of-type {
   text-transform: uppercase;
-
   margin-bottom: 25px;
 }
 
@@ -1281,11 +1280,10 @@ input::-moz-focus-inner {
     font-size: 8px;
   }
 
-  .FoouterUbicacion img {
+  .foouterUbicacion img {
     width: 10px;
   }
 }
-
 
 @media screen and (min-width: 1020px) {
   .home span {

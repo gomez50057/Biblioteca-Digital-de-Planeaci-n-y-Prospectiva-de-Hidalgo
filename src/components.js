@@ -420,7 +420,7 @@ export const Foouter = ({ children }) => (
       <h1>Biblioteca Digital de Planeación</h1>
       <div className="foouterInfo">
         <h2>Unidad de Planeación y Prospectiva</h2>
-        <div className="FoouterUbicacion">
+        <div className="foouterUbicacion">
           <img src="../img/ubicacion.png" alt="Icono de ubicación" />
           <p>Plaza Juárez S/N Col. Centro <span>Pachuca de Soto, Hidalgo, México.</span></p>
         </div>
