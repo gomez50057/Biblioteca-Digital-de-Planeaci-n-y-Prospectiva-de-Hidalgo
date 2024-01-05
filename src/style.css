@@ -107,9 +107,9 @@ a {
 }
 
 .home-button {
-  background-color: #BC955B;
+  background: #BC955B;
   width: 150px;
-  height: 25px;
+  height: 35px;
   color: white;
   border-radius: 20px;
   position: absolute;
@@ -117,7 +117,26 @@ a {
   right: 20px;
   border: none;
   cursor: pointer;
+  outline: none;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
 }
+
+
+.home-button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.home-button:active {
+  transform: translateY(3px);
+}
+
+
+
+
+
+
+
 
 .homeh3 {
   color: #691B31;
@@ -845,19 +864,19 @@ input::-moz-focus-inner {
   background: #691B31;
 }
 
-.book-card[data-pokemon-type="informe"] .book-card__pokedex-year span {
+.book-card[data-pokemon-type="informes"] .book-card__pokedex-year span {
   color: #98989A;
 }
 
-.book-card[data-pokemon-type="informe"] .book-card__image {
+.book-card[data-pokemon-type="informes"] .book-card__image {
   background: #6F7271;
 }
 
-.book-card[data-pokemon-type="informe"] .book-card__image svg polygon {
+.book-card[data-pokemon-type="informes"] .book-card__image svg polygon {
   fill: #6F7271;
 }
 
-.book-card .book-card__types__informe {
+.book-card .book-card__types__informes {
   background: #98989A;
 }
 
@@ -1089,6 +1108,15 @@ input::-moz-focus-inner {
 /*  */
 
 @media screen and (max-width: 600px) {
+  .home-button {
+    width: 60vw;
+    height: 35px;
+    border-radius: 40px;
+    top: 150vw;
+    right: 0;
+  }
+
+
   .containerSubTiDoc {
     margin-bottom: 20px;
   }
@@ -1158,14 +1186,6 @@ input::-moz-focus-inner {
 
   .logotipo img {
     top: 15vw;
-  }
-
-  .home-button {
-    width: 60vw;
-    height: 35px;
-    border-radius: 40px;
-    top: 150vw;
-    right: 0;
   }
 
   .homeh3 {

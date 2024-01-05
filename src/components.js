@@ -1,5 +1,7 @@
 // import { resolveSrcName } from "./utils";
 import React, { useState, useEffect, forwardRef } from "react";
+import { datosBibliotecaDigital } from './utils'; // Asegúrate de tener la ruta correcta
+
 
 const TypewriterEffect = ({ text }) => {
   const [displayText, setDisplayText] = useState('');
@@ -152,35 +154,53 @@ export const AboutUs = forwardRef(({ children }, ref) => {
 
 
 // Featured component.
-export const Featured = ({ children }) => (
-  <section className="featured" style={{ backgroundImage: `url(..//img/back.png)`, }}>
-    <div className="containerSubTi wow animate__animated animate__fadeInBottomLeft" data-wow-offset="250">
-      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
-      <h2 className="subtitulo">DESTACADAS</h2>
-      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
-    </div>
-    {/* Contenedor de 4 elementos */}
-    <div className="containerFeatured">
-      {/* Contenedor 1 */}
-      <div className="item">
-        <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 1" />
+export const Featured = ({ children }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const openModal = (booksIndex) => {
+    const item = datosBibliotecaDigital.cards.find(book => book.booksIndex === booksIndex);
+    setSelectedItem(item);
+  };
+
+  const closeModal = () => {
+    setSelectedItem(null);
+  };
+
+  return (
+    <section className="featured" style={{ backgroundImage: `url(..//img/back.png)`, }}>
+      <div className="containerSubTi wow animate__animated animate__fadeInBottomLeft" data-wow-offset="250">
+        <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
+        <h2 className="subtitulo">DESTACADAS</h2>
+        <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
       </div>
-      {/* Contenedor 2 */}
-      <div className="item">
-        <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 2" />
+      {/* Contenedor de 4 elementos */}
+      <div className="containerFeatured">
+        {/* Contenedor 1 */}
+        <div className="item" onClick={() => openModal("106")}>
+          <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 1" />
+        </div>
+        {/* Contenedor 2 */}
+        <div className="item" onClick={() => openModal("112")}>
+          <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 2" />
+        </div>
+        {/* Contenedor 3 */}
+        <div className="item" onClick={() => openModal("10")}>
+          <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 3" />
+        </div>
+        {/* Contenedor 4 */}
+        <div className="item" onClick={() => openModal("96")}>
+          <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 4" />
+        </div>
       </div>
-      {/* Contenedor 3 */}
-      <div className="item">
-        <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 3" />
-      </div>
-      {/* Contenedor 4 */}
-      <div className="item">
-        <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/primer.png" alt="Destacado Item 4" />
-      </div>
-    </div>
-    {children}
-  </section>
-);
+      {/* Modal */}
+      <Modal isOpen={!!selectedItem} onClose={closeModal} booksData={selectedItem} />
+
+      {children}
+    </section>
+  );
+};
+
+
 
 // Demo component.
 export const Demo = ({ children }) => (
@@ -273,8 +293,6 @@ const Modal = ({ children, isOpen, onClose, booksData }) => {
   if (!isOpen) {
     return null;
   }
-  // const { types, name, year, description, descriptionBook, imgSrc } = booksData;
-
   const { types, name, año, descriptionBook, pdfSrc } = booksData;
 
   return (
@@ -293,12 +311,7 @@ const Modal = ({ children, isOpen, onClose, booksData }) => {
           </svg>
         </a>
         <div className="close-button" onClick={onClose}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
           </svg>
@@ -330,7 +343,7 @@ export const CardContent = React.memo(
         <div className="book-card-container" onClick={() => setIsModalOpen(true)}>
           <div className="book-card" data-pokemon-type={types[0]}>
             <div className="book-card__image">
-              <img src="../img/primer.png" alt={`Imagen de ${name}`} />
+              <img src={`../img/caratulas/${types[0]}.png`} alt={`Imagen de ${name}`} />
             </div>
             <Tooltip text={name}><h3 className="book-card__name">
               <span>{truncatedName}</span>

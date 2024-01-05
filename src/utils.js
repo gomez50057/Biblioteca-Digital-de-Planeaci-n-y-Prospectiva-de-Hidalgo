@@ -29,7 +29,7 @@ export const datosBibliotecaDigital = {
     "Actas",
     "Guías",
     "Atlas",
-    "Informe"
+    "Informes"
   ],
   cards: [
     {
@@ -1295,7 +1295,7 @@ export const datosBibliotecaDigital = {
     {
       "name": "Primer Informe de Gobierno",
       "types": [
-        "informe"
+        "informes"
       ],
       "año": "2023",
       "descriptionBook": "Documento que ofrece un balance del estado general que guarda la Administración Pública Estatal, así como, las acciones emprendidas en el primer año de gestión.",
@@ -1593,5 +1593,6 @@ export const datosBibliotecaDigital = {
       "booksIndex": "156"
     }
   ]
+
 };
 
