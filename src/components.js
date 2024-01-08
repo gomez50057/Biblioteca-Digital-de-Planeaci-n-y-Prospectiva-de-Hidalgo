@@ -1,47 +1,49 @@
 // import { resolveSrcName } from "./utils";
 import React, { useState, useEffect, forwardRef } from "react";
-import { datosBibliotecaDigital } from './utils'; // Asegúrate de tener la ruta correcta
+import { datosBibliotecaDigital } from './utils';
+
+const imgBasePath = "../img/";
+const imgFeaturedPath = "../img/caratulas/";
+
+//seguir con el cambio jaja solo hice el video
 
 
-const TypewriterEffect = ({ text }) => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
+// const TypewriterEffect = ({ text }) => {
+//   const { length } = text;
+//   const [displayText, setDisplayText] = useState('');
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const [showCursor, setShowCursor] = useState(true);
 
-  useEffect(() => {
-    if (currentIndex < text.length) {
-      const intervalId = setInterval(() => {
-        setDisplayText((prevText) => prevText + text[currentIndex]);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, 100);
+//   useEffect(() => {
+//     if (currentIndex < length) {
+//       const intervalId = setInterval(() => {
+//         setDisplayText((prevText) => prevText + text[currentIndex]);
+//         setCurrentIndex((prevIndex) => prevIndex + 1);
+//       }, 90);
 
-      // Limpiar el intervalo cuando se completa el texto
-      return () => clearInterval(intervalId);
-    }
-  }, [text, currentIndex]);
+//       return () => clearInterval(intervalId);
+//     }
+//   }, [text, currentIndex, length]);
 
-  // Efecto para hacer parpadear el cursor
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      if (currentIndex < text.length) {
-        setShowCursor((prevShowCursor) => !prevShowCursor);
-      } else {
-        // Si hemos llegado al final del texto, ocultamos el cursor
-        setShowCursor(false);
-      }
-    }, 500);
+//   useEffect(() => {
+//     const cursorInterval = setInterval(() => {
+//       if (currentIndex < length) {
+//         setShowCursor((prevShowCursor) => !prevShowCursor);
+//       } else {
+//         setShowCursor(false);
+//       }
+//     }, 70);
 
-    // Limpiar el intervalo al desmontar el componente
-    return () => clearInterval(cursorInterval);
-  }, [text, currentIndex]);
+//     return () => clearInterval(cursorInterval);
+//   }, [text, currentIndex, length]);
 
-  return (
-    <h2 className="homeh2">
-      {displayText}
-      {showCursor && '|'}
-    </h2>
-  );
-};
+//   return (
+//     <h2 className="homeh2">
+//       {displayText}
+//       {showCursor && '|'}
+//     </h2>
+//   );
+// };
 
 
 // Home component.
@@ -56,19 +58,22 @@ export const BackgroundHome = ({ children }) => {
   return (
     <section className="home">
       <video autoPlay loop muted playsInline className="background-video">
-        <source src="../img/homeDigital.mp4" type="video/mp4" />
+        <source src={`${imgBasePath}homeDigital.mp4`} type="video/mp4" />
       </video>
       <div className="logotipo">
-        <img src="../img/Logotipo.png" alt="Logo de la Unidad Planeación" />
+        <img src={`${imgBasePath}Logotipo.webp`} alt="Logo de la Unidad Planeación" />
       </div>
       <div className="homeText">
-        <img src="../img/homeText.png" alt="Logo de Biblioteca Digital de Planeación" />
+        <img src={`${imgBasePath}homeText.webp`} alt="Logo de Biblioteca Digital de Planeación" />
       </div>
       <button className="home-button" onClick={handleButtonClick}>
-        Más información
+        Más Información
       </button>
-      <TypewriterEffect text='"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común."' />
-      <h3 className="homeh3 wow animate__animated animate__zoomInRight" data-wow-duration="13s">- Julio Menchaca Salazar</h3>
+      {/* <TypewriterEffect text='"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común."' /> */}
+      <div className="containerHome_h">
+        <h3 className="homeh2">"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común."</h3>
+        <h3 className="homeh3">- Julio Menchaca Salazar -</h3>
+      </div>
       {forwardRef.current && <AboutUs ref={forwardRef} />}
       {children}
     </section>
@@ -133,17 +138,17 @@ export const AboutUs = forwardRef(({ children }, ref) => {
   return (
 
     <section id="aboutUs" ref={ref} className="AboutUs">
-      <div className="AboutUsIMG wow animate__animated animate__zoomIn" data-wow-offset="350">
-        <img src="img/leyendo.png" alt="Persona leyendo nube de palabras" />
+      <div className="AboutUsIMG">
+        <img src="img/leyendo.webp" alt="Persona leyendo nube de palabras" />
       </div>
       <div className="AboutUstxt">
-        <p className="homeh3 wow animate__animated animate__fadeInRightBig" data-wow-offset="350"><span>Bienvenido a la Biblioteca Digital de Planeación</span>, herramienta pública para el almacenamiento y consulta de los documentos, programas, planes, informes, estudios, artículos, análisis, guías y demás instrumentos en los que participa la Unidad de Planeación y Prospectiva del Gobierno del Estado de Hidalgo.
+        <p className="wow animate__animated animate__fadeInRightBig" data-wow-offset="350"><span>Bienvenido a la Biblioteca Digital de Planeación</span>, herramienta pública para el almacenamiento y consulta de los documentos, programas, planes, informes, estudios, artículos, análisis, guías y demás instrumentos en los que participa la Unidad de Planeación y Prospectiva del Gobierno del Estado de Hidalgo.
         </p>
         <p className="wow animate__animated animate__fadeInRightBig" data-wow-offset="350">Este espacio virtual tiene como objetivo ser una herramienta útil para la población, en donde de manera ágil y sencilla pueden consultar y descargar los materiales que les resulten útiles.
         </p>
         <p className="wow animate__animated animate__fadeInRightBig" data-wow-offset="250"><span>Con la Biblioteca Digital de Planeación, contribuimos a llevar a Hidalgo a su máximo potencial.</span>    </p>
-        <div className="contadorlibros wow animate__animated animate__zoomInUp" data-wow-offset="250">
-          <img src="img/librosTotal.png" alt="Icono de libro digital" />
+        <div className="contadorlibros wow animate__animated animate__slideInDown" >
+          <img src="img/librosTotal.webp" alt="Icono de libro digital" />
           <p>{count} <span>Publicaciones</span></p>
         </div>
       </div>
@@ -167,29 +172,27 @@ export const Featured = ({ children }) => {
   };
 
   return (
-    <section className="featured" style={{ backgroundImage: `url(..//img/back.png)`, }}>
+    <section className="featured" style={{ backgroundImage: `url(..//img/back.webp)`, }}>
       <div className="containerSubTi wow animate__animated animate__fadeInBottomLeft" data-wow-offset="250">
-        <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
         <h2 className="subtitulo">DESTACADAS</h2>
-        <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
       </div>
       {/* Contenedor de 4 elementos */}
       <div className="containerFeatured">
         {/* Contenedor 1 */}
-        <div className="item" onClick={() => openModal("106")}>
-          <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 1" />
+        <div className="item" onClick={() => openModal("10")}>
+          <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src={`${imgFeaturedPath}primer.png`} alt="Destacado Item 1" />
         </div>
         {/* Contenedor 2 */}
         <div className="item" onClick={() => openModal("112")}>
-          <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 2" />
+          <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src={`${imgFeaturedPath}primer.png`} alt="Destacado Item 2" />
         </div>
         {/* Contenedor 3 */}
         <div className="item" onClick={() => openModal("10")}>
-          <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 3" />
+          <img className="wow animate__animated animate__slideInDown" data-wow-offset="250" src={`${imgFeaturedPath}primer.png`} alt="Destacado Item 3" />
         </div>
         {/* Contenedor 4 */}
         <div className="item" onClick={() => openModal("96")}>
-          <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src="../img/caratulas/primer.png" alt="Destacado Item 4" />
+          <img className="wow animate__animated animate__slideInUp" data-wow-offset="250" src={`${imgFeaturedPath}primer.png`} alt="Destacado Item 4" />
         </div>
       </div>
       {/* Modal */}
@@ -206,7 +209,7 @@ export const Featured = ({ children }) => {
 export const Demo = ({ children }) => (
   <section className="grid-demo">
     <div className="ImgBanda" >
-      <img src="../img/banda.png" alt="Banda con glifos de Hidalgo" />
+      <img src={`${imgBasePath}banda.webp`} alt="Banda con glifos de Hidalgo" />
     </div>
     {children}
   </section>
@@ -216,9 +219,7 @@ export const Demo = ({ children }) => (
 export const Documents = ({ children }) => (
   <div className="documents">
     <div className="containerSubTiDoc wow animate__animated animate__fadeInBottomRight">
-      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginRight: '20px', width: '30px', height: '30px' }} />
       <h2 className="subtitulo">DOCUMENTOS</h2>
-      <img src="../img/titulop.png" alt="Estrella Tzuhu" style={{ marginLeft: '20px', width: '30px', height: '30px' }} />
     </div>
     {children}
   </div>
@@ -296,7 +297,7 @@ const Modal = ({ children, isOpen, onClose, booksData }) => {
   const { types, name, año, descriptionBook, pdfSrc } = booksData;
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className={`modal-overlay ${isOpen ? 'modal-open' : 'modal-closed'}`} onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         {/* <img src={imgSrc} alt={`Imagen de ${name}`} /> */}
         <h2>{name}</h2>
@@ -328,7 +329,7 @@ export const CardContent = React.memo(
   ({ types, name, año, descriptionBook, pdfSrc }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const truncatedName = name.length > 40 ? `${name.slice(0, 40)}...` : name;
+    const truncatedName = name.length > 55 ? `${name.slice(0, 55)}...` : name;
 
     const booksData = {
       types,
@@ -343,7 +344,7 @@ export const CardContent = React.memo(
         <div className="book-card-container" onClick={() => setIsModalOpen(true)}>
           <div className="book-card" data-pokemon-type={types[0]}>
             <div className="book-card__image">
-              <img src={`../img/caratulas/${types[0]}.png`} alt={`Imagen de ${name}`} />
+              <img src={`${imgFeaturedPath}${types[0]}.png`} alt={`Imagen de ${name}`} />
             </div>
             <Tooltip text={name}><h3 className="book-card__name">
               <span>{truncatedName}</span>
@@ -424,9 +425,9 @@ export const CardContent = React.memo(
 // Foouter component.
 export const Foouter = ({ children }) => (
   <section className="foouter"
-    style={{ backgroundImage: `url(../img/foouter.png)`, }}>
+    style={{ backgroundImage: `url(../img/foouter.webp)`, }}>
     <div className="foouterLogo">
-      <img src="../img/LogotipoBlanco.png" alt="Logo de la Unidad Planeación en blanco" />
+      <img src="../img/LogotipoBlanco.webp" alt="Logo de la Unidad Planeación en blanco" />
     </div>
     <div className="fooutertxt">
       <div className="foouterBar"></div>
@@ -434,7 +435,7 @@ export const Foouter = ({ children }) => (
       <div className="foouterInfo">
         <h2>Unidad de Planeación y Prospectiva</h2>
         <div className="foouterUbicacion">
-          <img src="../img/ubicacion.png" alt="Icono de ubicación" />
+          <img src="../img/ubicacion.webp" alt="Icono de ubicación" />
           <p>Plaza Juárez S/N Col. Centro <span>Pachuca de Soto, Hidalgo, México.</span></p>
         </div>
       </div>

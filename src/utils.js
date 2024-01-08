@@ -2,24 +2,38 @@ import { useCallback } from "react";
 
 // Return the filter
 export function useFilter(name, type) {
-  name = name.toLowerCase();
-  type = type.toLowerCase();
+
+  // Normalize 'name' and 'type' to lowercase or set it to an empty string if it's null or undefined.
+  // This ensures consistent comparison and avoids potential errors with toLowerCase().
+  name = (name ?? '').toLowerCase();
+  type = (type ?? '').toLowerCase();
+
+
+  // return useCallback(
+  //   function (data) {
+  //     var isSearchMatch = !name
+  //       ? true
+  //       : data.name.toLowerCase().indexOf(name) > -1;
+  //     var isFilterMatch = type === 'todas' || data.type.includes(type);
+  //     return isSearchMatch && isFilterMatch;
+  //   },
+  //   [name, type]
+  // );
 
   return useCallback(
-    function (data) {
-      var isSearchMatch = !name
-        ? true
-        : data.name.toLowerCase().indexOf(name) > -1;
-      var isFilterMatch = type === "todas" ? true : data.type.indexOf(type) > -1;
-      return isSearchMatch && isFilterMatch;
-    },
-    [name, type]
-  );
+  function (data) {
+    const isNameMatch = !name || data.name.toLowerCase().includes(name);
+    const isFilterMatch = type === 'todas' || data.type.includes(type);
+    return isNameMatch && isFilterMatch;
+  },
+  [name, type]
+);
+
 }
 
 // Lista de libros
 export const datosBibliotecaDigital = {
-  cardInfo: ["Categoría ", "Abecedario", "Año"],
+  cardInfo: ["Categoría", "A-Z", "Año"],
   types: [
     "Todas",
     "Planes",

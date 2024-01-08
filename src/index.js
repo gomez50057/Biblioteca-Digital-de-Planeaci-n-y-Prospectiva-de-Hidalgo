@@ -63,7 +63,6 @@ const App = () => {
   return (
     <div>
       <BackgroundHome>
-        {/* <Input onKeyUp={e => setFilter({ ...filter, name: e.target.value })} /> */}
       </BackgroundHome>
 
       <AboutUs>
@@ -82,7 +81,7 @@ const App = () => {
             values={datosBibliotecaDigital.types}
             onChange={e => setFilter({ ...filter, type: e.target.value })}
           />
-          {/* Nombre, Categoria, Numero */}
+          {/* Categoría, A-Z, Año */}
           <Select
             values={datosBibliotecaDigital.cardInfo}
             onChange={e => setSort({ ...sort, value: e.target.value })}
